@@ -1,4 +1,4 @@
-//Helloo
+
 public abstract class SortCompetition implements Comparable <SortCompetition> {
 	
 	
