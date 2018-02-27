@@ -7,7 +7,7 @@ public class Team2 {
 	{
 		
 		//challengeOne: Standard sort and process
-		public static int challengeOne(int[] list1) 
+		public abstract int challengeOne(int[] arr) 
 		{
 			//random number generator 
 			//an array of 10,000 random integers between 0-1000
@@ -29,7 +29,7 @@ public class Team2 {
 				}
 			}	
 			
-			return (list1.length/2)+1;
+			return (arr.length/2)+1;
 		}
 	}
 }
