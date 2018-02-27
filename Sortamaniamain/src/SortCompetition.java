@@ -26,7 +26,7 @@ public abstract class SortCompetition implements Comparable <SortCompetition> {
 	}
 	
 	public abstract int challengeOne(int[] arr);
-	
+		System.out.println("ss") ; 
 	public abstract int challengeTwo(String[] arr, String query);
 	
 	public abstract int challengeThree(int[] arr);
@@ -37,6 +37,6 @@ public abstract class SortCompetition implements Comparable <SortCompetition> {
 	
 	//Add a custom greeting so your sorter can introduce itself
 	public abstract String greeting();
-
+	 
 }
 
