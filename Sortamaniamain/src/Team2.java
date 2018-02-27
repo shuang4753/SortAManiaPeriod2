@@ -10,7 +10,7 @@ public class Team2 {
 		public abstract int challengeOne(int[] arr) 
 		{
 			//random number generator 
-			//an array of 10,000 random integers between 0-1000
+			//data set: an array of 10,000 random integers between 0-1000
 			int temp=0;
 			for(int outside=1; outside<list1.length; outside++)
 			{
@@ -31,5 +31,16 @@ public class Team2 {
 			
 			return (arr.length/2)+1;
 		}
+		
+		//challengeFour: Multidimensional sorting
+		public abstract int challengeFour(int[][] arr)
+		{
+			//data set: a multidimensional array int[1000][1000] all elements are random int between 0-1000
+			//sort each sub-array and sort the arrays by their medium value
+			//return median of median array
+			
+			
+		}
 	}
+	
 }
