@@ -1,4 +1,5 @@
 
-public class Team2 {
-a
+public class Team2 extends SortCompetition
+{
+
 }
