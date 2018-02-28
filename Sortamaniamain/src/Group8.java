@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.util.Math;
 
 //Wes Avedisian, Saurabh Bansal, Ava DiPietro
 public class Group8 
@@ -6,15 +6,7 @@ public class Group8
 	public static void main (String[] args)
 	{
 		Random rnd = new Random();
-		int n = 0;
-		int a[] = new int[n];
-		for (int i=0; i < n; i++) 
-		{
-		    a[i] = rnd.nextInt(10000);
-		}
-		System.out.println (a);
-		bubbleSort(a);
-		System.out.println(a);
+		
 	}
 	public static void bubbleSort(int []L1)
 	{
@@ -37,5 +29,14 @@ public class Group8
 		int y = x[in1];
 		x[in1] = x[in2];
 		x[in2] = y;
+	}
+	public static int[] randomInts(int L, int U, int C)
+	{
+		int[] ran = new int[U];
+		for(int x = 0; x < C; x++)
+		{
+			ran[x] = Math.random()*(U-c);
+		}
+		return pay
 	}
 }
