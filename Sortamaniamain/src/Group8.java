@@ -5,9 +5,23 @@ public class Group8
 {
 	public static void main (String[] args)
 	{
-		Random rnd = new Random();
+		randomInts(10000);
 		
 	}
+	
+	public static void challengeOne(int[] arr) {
+		
+	}
+	
+	public static int[] randomInts (int x) { // ava's ELITE method do not tuch
+		int[] randoms = new int[x];
+		for (int y = 0; y < x; y++) {
+			randoms[y] = (int) (Math.random() * x);
+			System.out.println(randoms[y]);
+		}
+		return randoms;
+	}
+	
 	public static void bubbleSort(int []L1)
 	{
 		boolean f = true;
