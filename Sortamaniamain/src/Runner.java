@@ -1,14 +1,17 @@
 
 public class Runner {
 
-	public static void main(String[] args) {
-		int [] something1 = {1,3,2,4};
-	
-		SortCompetition something = new Team11SortCompetition();
-		
-		System.out.println(something.challengeOne(something1));
-		print(something1);
+	public static void main(String[] args) 
+	{
+		int [] list1 = tenThousand(10000);
+		long start = System.nanoTime();
+		SortCompetition median = new Team11SortCompetition();
+		long end = System.nanoTime();
+		long time = end - start;
+		System.out.println("ChallengeOne(quick) took: " + time + "nanoseconds");
+		System.out.println(median.challengeOne(list1));
 	}
+	
 	public static void print(int [] arr)
 	{
 		for (int i = 0; i < arr.length; i++)
@@ -17,11 +20,13 @@ public class Runner {
 		}
 	}
 	
-	public int[] tenThousand(int []list1)
+	public static int[] tenThousand (int length)
 	{
-		for (i = 0; i<list1.length; i++)
+		int[] list = new int[length];
+		for (int i = 0; i<list.length-1; i++)
 		{
-			list1[i]=rand
+			list[i]=(int)(Math.random()*10000);
 		}
+		return list;
 	}
 }
