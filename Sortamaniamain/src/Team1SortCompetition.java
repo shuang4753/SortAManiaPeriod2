@@ -6,22 +6,12 @@ public class Team1SortCompetition extends SortCompetition {
 		
 	}
 	public int challengeOne(int[]baseList)
-	{baseList=new int[10000];
-	Random a=new Random();
-	for(int x=0;x<10000;x++)
-	{baseList[x]=a.nextInt(10000);	
-	}
-	insertionSort(baseList);
+	{insertionSort(baseList);
 	return ((baseList[4998]+baseList[4999])/2);
 	}
 	
 	public int challengeTwo(String[]baseList1,String query)
-	{baseList1=new String[10000];
-	
-	for(int x=0;x<10000;x++)
-	{    int l=baseList1[x].length();
-		l=5;	
-	}
+	{
 	for(int y=0;y<baseList1.length;y++)
 	{if (baseList1[y].equals(query))
 	  {return y;}
@@ -29,11 +19,10 @@ public class Team1SortCompetition extends SortCompetition {
 	}
 	return -1;
 	}
-
+	
 	public int challengeThree(int[]baseList)
-	{selectionSort(baseList);
+	{insertionSort(baseList);
 	return ((baseList[4998]+baseList[4999])/2);
-		
 	}
 	
 	
