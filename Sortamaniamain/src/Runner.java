@@ -22,7 +22,11 @@ public class Runner
 	
 	public static int[] randInts(int range);
 	{
-		
+		int list = new int[range];
+		for(x = 0; x < length; x++)
+		{
+			list[x]
+		}
 	}
 	
 	
