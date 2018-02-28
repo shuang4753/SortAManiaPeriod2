@@ -108,7 +108,19 @@ public class Team11SortCompetition extends SortCompetition {
 					
 			return merge(mergeSort(left), mergeSort(right));
 		}
-
+		
+		public static int[] mergeSort(int[] list)
+		{
+			if (list.length==1)
+			{
+				return list;
+			}
+			
+			int[] left = Arrays.copyOfRange(list,0,list.length/2); 
+			int[] right = Arrays.copyOfRange(list,list.length/2,list.length);
+					
+			return merge(mergeSort(left), mergeSort(right));
+		}
 		public static void quickSort(int[] list1, int front, int back)
 		{
 			if (back > front)
@@ -217,6 +229,47 @@ public class Team11SortCompetition extends SortCompetition {
 		return list3;
 	}
 
+	public static int[] merge(int[] list1, int[] list2)
+	{
+		int bigLength=list1.length+list2.length;
+		int[] list3 = new int[bigLength]; 
+		int index1 = 0;
+		int index2 = 0;
+		
+		for (int index3=0; index3<(list3.length); index3++)
+		{
+			if (index1<list1.length && index2<list2.length) 
+			{
+				if (list1[index1]<(list2[index2]))
+				{
+					list3[index3]=list1[index1];
+					index1++;
+				}
+			
+				else 
+				{
+					list3[index3] = list2[index2];
+					index2++;
+				}
+			}
+			
+			else
+			{
+				if (index2<list2.length)
+				{
+					list3[index3]=list2[index2];
+					index2++;
+				}
+				
+				if (index1<list1.length)
+				{
+					list3[index3]=list1[index1];
+					index1++;
+				}
+			}
+		}
+		return list3;
+}
 
 
 
