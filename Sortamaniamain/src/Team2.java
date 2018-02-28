@@ -30,8 +30,9 @@ public class Team2 {
 				
 				//Challenge 5 1D Array Mystery Comparables
 			}
+			
 		//challengeOne: Standard sort and process
-		public abstract int challengeOne(int[] arr) 
+		public abstract int challengeOne(int[] randArr) 
 		{
 			//random number generator 
 			//data set: an array of 10,000 random integers between 0-1000
