@@ -5,6 +5,7 @@ public class Team11SortCompetition extends SortCompetition {
 	@Override
 	public int challengeOne(int[] arr) {
 		quickSort(arr, 0, arr.length-1);
+		//radixSort(arr);
 		return ( arr[arr.length/2] + arr[(arr.length/2)-1]) / 2;
 	}
 
@@ -39,98 +40,150 @@ public class Team11SortCompetition extends SortCompetition {
 	}
 
 	//Sorting Methods
-		public static void insertionSort(int[] list1)
+	
+	//STILL TESTING DO NOT USE YET!!!!!!
+	public static int getMax(int[] arr)
+	{
+		int n = arr.length;
+		int max = arr[0];
+		for (int i = 1; i < n; i++)
 		{
-			for (int x=1; x<list1.length; x++)
+			if (arr[i] > max)
 			{
-				for(int y=x; y>0; y-- )
+				max = arr[i];
+			}
+		}
+		return max;
+	}
+	
+	public static void countSort(int[] arr, int place)
+	{
+		int n = arr.length;
+		int [] count = new int[10];
+		int [] result = new int[n];
+		int i;
+		
+		for (i = 0; i < n; i++)
+		{
+			count [(arr[i]/place)%10]++;
+		}
+		
+		for (i = 1; i < 10; i++)
+		{
+			count[i] += count[i-1];
+		}
+		
+		for (i = n - 1; i >= 0; i--)
+		{
+			result[count[(arr[i]/place)%10] - 1] = arr[i];
+			count[(arr[i]/place)%10]--;
+		}
+		
+		for (i = 0; i < n; i++)
+		{
+			arr[i] = result[i];
+		}
+	}
+	
+	public static void radixSort(int [] arr)
+	{
+		int max = getMax(arr);
+		
+		for (int i = 1; i <= max; i*=10)
+		{
+			countSort(arr, i);
+		}
+	}
+	
+	//^^^^^^^ STILL TESTING DO NOT USE YET!!!! ^^^^^^^
+	
+	public static void insertionSort(int[] list1)
+	{
+		for (int x=1; x<list1.length; x++)
+		{
+			for(int y=x; y>0; y-- )
+			{
+				if (list1[y] < list1[y-1])
 				{
-					if (list1[y] < list1[y-1])
-					{
-						swap(list1, y, y-1);
-					}
-					else 
-					{
-						break;
-					}
+					swap(list1, y, y-1);
+				}
+				else 
+				{
+					break;
 				}
 			}
 		}
-		
+	}	
 
-		public static void selectionSort(double[] list1)
+	public static void selectionSort(double[] list1)
+	{
+		for (int x = 0; x<list1.length-1; x++)
 		{
-			for (int x = 0; x<list1.length-1; x++)
+			int indexOfMin=x;
+			for (int y = x +1; y<list1.length; y++)
 			{
-				int indexOfMin=x;
-				for (int y = x +1; y<list1.length; y++)
+				if(list1[indexOfMin]>list1[y])
 				{
-					if(list1[indexOfMin]>list1[y])
-					{
-						 indexOfMin=y;
-					}
+					 indexOfMin=y;
 				}
-				swap(list1, indexOfMin, x);
 			}
-			
+			swap(list1, indexOfMin, x);
 		}
+	}	
 		
-		
-		public static void bubbleSort(int[] list1)
+	public static void bubbleSort(int[] list1)
+	{	
+		int swapCount = 1;
+		while (swapCount !=0)
 		{
-			
-			int swapCount = 1;
-			while (swapCount !=0)
-			{
-				swapCount = 0;
+			swapCount = 0;
 				
-				for (int i = 0; i<list1.length-1; i++)
+			for (int i = 0; i<list1.length-1; i++)
+			{
+				if (list1[i] > (list1[i+1]) )
 				{
-					if (list1[i] > (list1[i+1]) )
-					{
-						swap(list1, i, i+1);
-						swapCount++;
-					}
+					swap(list1, i, i+1);
+					swapCount++;
 				}
 			}
 		}
+	}	
 		
-		
-		public static String[] mergeSort(String[] list)
+	public static String[] mergeSort(String[] list)
+	{
+		if (list.length==1)
 		{
-			if (list.length==1)
-			{
-				return list;
-			}
+			return list;
+		}
 			
-			String left[] = Arrays.copyOfRange(list,0,list.length/2); 
-			String right[] = Arrays.copyOfRange(list,list.length/2,list.length);
+		String left[] = Arrays.copyOfRange(list,0,list.length/2); 
+		String right[] = Arrays.copyOfRange(list,list.length/2,list.length);
 					
-			return merge(mergeSort(left), mergeSort(right));
-		}
+		return merge(mergeSort(left), mergeSort(right));
+	}
 		
-		public static int[] mergeSort(int[] list)
+	public static int[] mergeSort(int[] list)
+	{
+		if (list.length==1)
 		{
-			if (list.length==1)
-			{
-				return list;
-			}
+			return list;
+		}
 			
-			int[] left = Arrays.copyOfRange(list,0,list.length/2); 
-			int[] right = Arrays.copyOfRange(list,list.length/2,list.length);
+		int[] left = Arrays.copyOfRange(list,0,list.length/2); 
+		int[] right = Arrays.copyOfRange(list,list.length/2,list.length);
 					
-			return merge(mergeSort(left), mergeSort(right));
-		}
-		public static void quickSort(int[] list1, int front, int back)
-		{
-			if (back > front)
-			{
-				
-				int pivotIndex = partition(list1, front, back);
-				quickSort(list1, front, pivotIndex-1);
-				quickSort(list1, pivotIndex+1, back);
-			}	
-		}
+		return merge(mergeSort(left), mergeSort(right));
+	}
+	
+	public static void quickSort(int[] list1, int front, int back)
+	{
+		if (back > front)
+		{	
+			int pivotIndex = partition(list1, front, back);
+			quickSort(list1, front, pivotIndex-1);
+			quickSort(list1, pivotIndex+1, back);
+		}	
+	}
 		
 
 
