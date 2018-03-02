@@ -4,10 +4,14 @@ public class Runner {
 
 	public static void main(String[] args) 
 	{
-		//QuickTest
-		int [] list1 = tenThousand(1000);
-		long start = System.nanoTime();
 		SortCompetition our = new Team11SortCompetition();
+		
+		//CountTest
+		int [] list1 = tenThousand(10000);
+		int [] copy = list1;
+		//int [] copy2 = 
+		long start = System.nanoTime();
+		our.challengeOne(list1);
 		long end = System.nanoTime();
 		long time = end - start;
 		System.out.println("ChallengeOne took: " + time + "nanoseconds");
@@ -16,13 +20,23 @@ public class Runner {
 		
 		//MergeTest
 		long start1 = System.nanoTime();
-		our = new Team11SortCompetition();
-		int[] mergeFinal = Team11SortCompetition.mergeSort(list1);
+		int[] mergeFinal = Team11SortCompetition.mergeSort(copy);
 		long end1 = System.nanoTime();
 		long time1 = end1 - start1;
 		System.out.println("ChallengeOne took: " + time1 + "nanoseconds");
-		System.out.println(our.challengeOne(list1));
+		System.out.println((copy[copy.length/2] + copy[(copy.length/2)-1]) / 2);
 		System.out.println(Arrays.toString(mergeFinal) + "\n");
+		
+		//quick
+		long start2 = System.nanoTime();
+		Team11SortCompetition.quickSort(copy, 0, copy.length - 1);
+		long end2 = System.nanoTime();
+		long time2 = end2 - start2;
+		System.out.println("ChallengeOne took: " + time2 + "nanoseconds");
+		System.out.println((copy[copy.length/2] + copy[(copy.length/2)-1]) / 2);
+		System.out.println(Arrays.toString(list1) + "\n");
+		
+		
 		
 		//if positive, then merge took longer
 		//if negative, then quick took longer

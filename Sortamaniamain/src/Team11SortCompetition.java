@@ -4,15 +4,26 @@ public class Team11SortCompetition extends SortCompetition {
 
 	@Override
 	public int challengeOne(int[] arr) {
-		quickSort(arr, 0, arr.length-1);
+		//quickSort(arr, 0, arr.length-1);
 		//radixSort(arr);
+		countSort(arr);
 		return ( arr[arr.length/2] + arr[(arr.length/2)-1]) / 2;
 	}
 
 	@Override
 	public int challengeTwo(String[] arr, String query) {
 		
-		return 0;
+		int something = 0;
+		String [] result = mergeSort(arr);
+		for(int i = 0; i < arr.length; i++)
+		{
+			arr[i] = result[i];
+			if (arr[i].equals(query))
+			{
+				something = i;
+			}
+		}
+		return something;
 	}
 
 	@Override
@@ -56,7 +67,38 @@ public class Team11SortCompetition extends SortCompetition {
 		return max;
 	}
 	
-	public static void countSort(int[] arr, int place)
+	public static void countSort(int[] arr)
+	{
+		int n = arr.length;
+		int max = getMax(arr);
+		int [] count = new int[max + 1];
+		int [] result = new int[n];
+		int i;
+		
+		for (i = 0; i < n; i++)
+		{
+			count [arr[i]]++;
+		}
+		
+		for (i = 1; i < max + 1; i++)
+		{
+			count[i] += count[i-1];
+			//count[i] = count[i] + count[i-1];
+		}
+		
+		for (i = n - 1; i >= 0; i--)
+		{
+			result[count[arr[i]] - 1] = arr[i];
+			count[arr[i]]--;
+		}
+		
+		for (i = 0; i < n; i++)
+		{
+			arr[i] = result[i];
+		}
+	}
+	
+	public static void countSorthelper(int[] arr, int place)
 	{
 		int n = arr.length;
 		int [] count = new int[10];
@@ -91,7 +133,7 @@ public class Team11SortCompetition extends SortCompetition {
 		
 		for (int i = 1; i <= max; i*=10)
 		{
-			countSort(arr, i);
+			countSorthelper(arr, i);
 		}
 	}
 	
