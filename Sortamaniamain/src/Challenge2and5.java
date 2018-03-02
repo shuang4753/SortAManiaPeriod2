@@ -16,7 +16,7 @@ public class Challenge2and5 {
 	public static int stringSort(String givenStr, String[] test1) {
 		int swapNum = 0, recordedNum=0;
 		for(int i = 0; i<test1.length;i++) {
-			swapNum = i;
+			swapNum = i; 
 			for(int j=i-1; j>=0;j--) {
 				if(test1[swapNum].compareTo(test1[j])<0) {
 					stringSwap(test1, swapNum, j);
