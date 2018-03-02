@@ -5,22 +5,24 @@ public class Group8
 {
 	public static void main (String[] args)
 	{
-		randomInts(10000);
+		int[] ran = randomInts(0, 10000, 10000);
+		
 		
 	}
 	
-	public static void challengeOne(int[] arr) {
+	public static void challengeOne(int[] arr) 
+	{
 		
 	}
 	
-	public static int[] randomInts (int x) { // ava's ELITE method do not tuch
-		int[] randoms = new int[x];
-		for (int y = 0; y < x; y++) {
-			randoms[y] = (int) (Math.random() * x);
-			System.out.println(randoms[y]);
-		}
-		return randoms;
-	}
+	//public static int[] randomInts (int x) { // ava's ELITE method do not tuch
+	//	int[] randoms = new int[x];
+	//	for (int y = 0; y < x; y++) {
+	//		randoms[y] = (int) (Math.random() * x);
+	//		System.out.println(randoms[y]);
+	//	}
+	//	return randoms;
+	//}
 	
 	public static void bubbleSort(int []L1)
 	{
@@ -46,11 +48,11 @@ public class Group8
 	}
 	public static int[] randomInts(int L, int U, int C)
 	{
-		int[] ran = new int[U];
+		int[] ran = new int[C];
 		for(int x = 0; x < C; x++)
 		{
-			ran[x] = Math.random()*(U-c);
+			ran[x] = (int)Math.random()*(U-L) + L;
 		}
-		return pay
+		return ran;
 	}
 }
