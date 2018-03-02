@@ -93,4 +93,5 @@ public class Group8
 		}
 		return combo;
 	}
+	print();
 }
