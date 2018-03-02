@@ -26,7 +26,7 @@ public class Runner
 		Random a = new Random();
 		for(int x = 0; x < randArr.length; x++)
 		{
-			for (int y = 0; y < )
+			for (int y = 0; y < randArr[x].length )
 		}
 	}
 	
