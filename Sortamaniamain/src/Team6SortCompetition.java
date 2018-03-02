@@ -35,6 +35,7 @@ public class Team6SortCompetition extends SortCompetition
 	@Override
 	public String greeting() {
 		// TODO Auto-generated method stub
+		System.out.println("beep boop");
 		return null;
 	}
 
