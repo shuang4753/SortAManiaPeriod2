@@ -1,4 +1,5 @@
-import java.util.Math;
+import java.lang.Math;
+import java.util.Arrays;
 
 //Wes Avedisian, Saurabh Bansal, Ava DiPietro
 public class Group8 
@@ -6,7 +7,7 @@ public class Group8
 	public static void main (String[] args)
 	{
 		int[] ran = randomInts(0, 10000, 10000);
-		
+		mergeSort(ran);
 		
 	}
 	
@@ -54,5 +55,42 @@ public class Group8
 			ran[x] = (int)Math.random()*(U-L) + L;
 		}
 		return ran;
+	}
+	
+	public static String[] mergeSort(String[] S)
+	{
+		if(S.length >= 2)
+		{
+			String[] s1 = new String[S.length/2];
+			s1 = Arrays.copyOfRange(S, 0, (S.length/2)-1);
+			String[] s2 = new String[S.length-S.length/2];
+			s2 = Arrays.copyOfRange(S, S.length/2, S.length-1);
+			return merge(mergeSort(s1), mergeSort(s2));
+		}
+		else
+		{
+			return S;
+		}
+	}
+	
+	public static String[] merge(String[] x, String[] y)
+	{
+		String[] combo = new String[x.length + y.length];
+		int xc = 0;
+		int yc = 0;
+		while(xc + yc < (x.length + y.length) - 1)
+		{
+			if(x[xc].compareTo(y[yc])>=0)
+			{
+				combo[xc + yc] = y[yc];
+				yc++;
+			}
+			if(x[xc].compareTo(y[yc])<0)
+			{
+				combo[xc + yc] = x[xc];
+				xc++;
+			}
+		}
+		return combo;
 	}
 }
