@@ -3,7 +3,8 @@ public class Team1Runner {
 
 	public static void main(String[] args) {
 		Team1SortCompetition sortcompetitioninstance=new Team1SortCompetition();
-		sortcompetitioninstance.challengeOne(randomInt(10000));
+		System.out.print (sortcompetitioninstance.challengeOne(randomInt(10000)));
+		System.out.print(sortcompetitioninstance.challengeTwo(stringGenerator(5), String query));
 		
 		
 
@@ -16,6 +17,7 @@ public class Team1Runner {
 		 
 	 }
 		return randomArr;
+		
 	}
 	public static String[] stringGenerator(int count)
 	{String[]stringList=new String[count];
@@ -24,6 +26,11 @@ public class Team1Runner {
 		  length=5;}
 	
 	  return stringList;	
+	}
+	public static String[] queryGenerator()
+	{String query=new String(5);
+	
+		
 	}
 	
 

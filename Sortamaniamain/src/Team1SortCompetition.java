@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 public class Team1SortCompetition extends SortCompetition {
 	
@@ -6,8 +7,21 @@ public class Team1SortCompetition extends SortCompetition {
 		
 	}
 	public int challengeOne(int[]baseList)
-	{insertionSort(baseList);
-	return ((baseList[4998]+baseList[4999])/2);
+	{ long start=System.nanoTime();
+	  insertionSort(baseList);
+	  long end=System.nanoTime();
+	  long time=end-start;
+	  System.out.println(time);
+	  
+	 int x=baseList.length-1;
+	 if(baseList.length%2==0)
+	 {return ((baseList[x/2+1]+baseList[(x/2)])/2);	 
+	 }
+	 else
+	 {return (baseList[(baseList.length-1)/2]);
+		 
+	 }
+	
 	}
 	
 	public int challengeTwo(String[]baseList1,String query)
@@ -94,5 +108,40 @@ public class Team1SortCompetition extends SortCompetition {
 	 arr[index1]=arr[index2];
 	 arr[index2]=y;
 		
+	}
+	public static void quickSort(int[]list1,int front, int back)
+    {if(back>front)
+     {
+    	int pivotPos=partition(list1,front,back);
+    	quickSort(list1,front,pivotPos-1);
+    	quickSort(list1,pivotPos+1,back);
+     }
+    	
+    }
+	public static int partition(int[]list1,int front,int back)
+	{ int pivotPos=front;
+	int temp=0;
+	//Checks to see values that are less than when partitionIndex is 0
+	  for(int x=front+1;x<=back;x++)
+	  {if(list1[x]<list1[pivotPos])
+	   {temp=list1[pivotPos];
+	   list1[pivotPos]=list1[x];
+	   list1[x]=temp;
+	   pivotPos= x;
+	   //checks for values less than partition when partitionIndex is swapped
+	   for(int y=pivotPos-1;y>=0;y--)
+	    {if (list1[y]>list1[pivotPos])
+	     {temp=list1[pivotPos];
+	      list1[pivotPos]=list1[y];
+	      list1[y]=temp;
+	      pivotPos=y;
+	    	
+	     }
+		   
+	    }
+	   }
+	  
+	  }
+	  return pivotPos;
 	}
 }
