@@ -1,15 +1,11 @@
 import java.util.Math;
 
 //Wes Avedisian, Saurabh Bansal, Ava DiPietro
-public class Group8 
+public class Team8SortCompetition extends SortCompetition
 {
 	public static void main (String[] args)
 	{
 		randomInts(10000);
-		
-	}
-	
-	public static void challengeOne(int[] arr) {
 		
 	}
 	
@@ -51,6 +47,43 @@ public class Group8
 		{
 			ran[x] = Math.random()*(U-c);
 		}
-		return pay
+		return pay;
 	}
+
+	@Override
+	public int challengeOne(int[] arr) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int challengeTwo(String[] arr, String query) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int challengeThree(int[] arr) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int challengeFour(int[][] arr) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int challengeFive(Comparable[] arr, Comparable query) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String greeting() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }
