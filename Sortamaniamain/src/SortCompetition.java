@@ -26,7 +26,7 @@ public abstract class SortCompetition implements Comparable <SortCompetition> {
 	}
 	
 	public abstract int challengeOne(int[] arr);
-		System.out.println("ss") ; 
+	
 	public abstract int challengeTwo(String[] arr, String query);
 	
 	public abstract int challengeThree(int[] arr);
