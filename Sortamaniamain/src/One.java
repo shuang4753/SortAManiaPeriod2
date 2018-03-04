@@ -14,29 +14,13 @@ public abstract class One {
 	}
 	
 	//challengeOne: Standard sort and process
-	public abstract int challengeOne(int[] randArr) 
+	@Override
+	public abstract int challengeOne(int[] arr) 
 	{
 		//random number generator 
 		//data set: an array of 10,000 random integers between 0-1000
-		int temp=0;
-		for(int outside=1; outside<list1.length; outside++)
-		{
-			for(int inside=outside; inside>0; inside--)
-			{
-				if(list1[inside]<list1[inside-1])
-				{
-					temp=list1[inside-1];
-					list1[inside-1]=list1[inside];
-					list1[inside]=temp;
-				}
-				else
-				{
-					break;
-				}
-			}
-		}	
-		
-		System.out.print(median(randomInts));
+		insertionSort(arr);
+		return (arr[arr.length/2] + arr[(arr.length/2)-1])/2;
 	}
 	
 	//challengeFour: Multidimensional sorting
@@ -56,6 +40,27 @@ public abstract class One {
 		//return median of median array
 	}	
 	
+		public static void insertionSort(int[] arr)
+		{
+			int temp=0;
+			for(int outside=1; outside<list1.length; outside++)
+			{
+				for(int inside=outside; inside>0; inside--)
+				{
+					if(list1[inside]<list1[inside-1])
+					{
+						temp=list1[inside-1];
+						list1[inside-1]=list1[inside];
+						list1[inside]=temp;
+					}
+					else
+					{
+						break;
+					}
+				}
+			}
+		}
+		
 	public static String[][] merge(int[] list1, int[] list2)
 	{
 		//precondition: both list1 and list2 contains Strings in alphabetical order from a to z 
