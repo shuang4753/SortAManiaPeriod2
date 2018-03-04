@@ -31,7 +31,7 @@ public class Team11SortCompetition extends SortCompetition {
 		
 		insertionSort(arr);
 		
-		return ( arr[arr.length/2] + arr[(arr.length/2)-1]) / 2;
+		return ((arr[arr.length/2] + arr[(arr.length/2)-1]) / 2);
 	}
 
 	@Override
