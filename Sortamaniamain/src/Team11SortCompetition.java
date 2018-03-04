@@ -29,7 +29,9 @@ public class Team11SortCompetition extends SortCompetition {
 	@Override
 	public int challengeThree(int[] arr) {
 		
-		return 0;
+		insertionSort(arr);
+		
+		return ( arr[arr.length/2] + arr[(arr.length/2)-1]) / 2;
 	}
 
 	@Override
