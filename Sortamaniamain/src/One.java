@@ -2,17 +2,29 @@
 import java.util.Arrays;
 
 public abstract class One {
-	public abstract void main(String args)
+	public static void main(String[] args)
 	{
 		int[] randArr= randomInts(1000);
 		long start = System.nanoTime();
 		int Medium= challengeOne(randArr);
 		long end = System.nanoTime();
 		long time = end - start;
+		System.out.println("Challenge 1 took: "+ time + " nanoseconds");
 		System.out.println(Arrays.toString(randArr));
 
 	}
 	
+	public static int[]randomInts(int len)
+	{
+		int[] list1 = new int[len];
+		
+		for (int i = 0; i<list1.length-1; i++)
+		{
+			list1[i]=(int)(Math.random()*10000);
+		}
+	
+		return list1;
+	}
 	//challengeOne: Standard sort and process
 	@Override
 	public abstract int challengeOne(int[] arr) 
