@@ -27,9 +27,10 @@ public class Team1SortCompetition extends SortCompetition {
 	public int challengeTwo(String[]baseList1,String query)
 	{
 	for(int y=0;y<baseList1.length;y++)
-	{if (baseList1[y].equals(query))
-	  {return y;}
-		
+	{if((baseList1[y]!=null)&&(query!=null))
+		{if (baseList1[y].equals(query))
+	     {return y;}
+		}
 	}
 	return -1;
 	}
