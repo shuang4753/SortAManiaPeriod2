@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class Challenge2 extends SortCompetition
 {
+	//Merge String
 	public static String[] mergeSort(String[] S)
 	{
 		if(S.length >= 2)
@@ -38,16 +39,47 @@ public class Challenge2 extends SortCompetition
 		}
 		return combo;
 	}
+	//Partition Int
+	public static int partition(int[] list, int front, int back) 
+	{		
+		int i = front;
+		int pivot = list[front];		
+		for (int j = front + 1; j <= back; j++) {
+			if (list[j] < pivot) {
+				i++;
+				int m = list[i];
+				list[i] = list[j];
+				list[j] = m;
+			}
+		}
+		for (int a = front; a < i; a++) {
+			list[a] = list[a + 1];
+		}
+		list[i] = pivot;
+		return i;
+	}
 	@Override
-	public int challengeOne(int[] arr) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int challengeOne(int[] arr) 
+	{
+		int a = arr.length/2;
+		int b = 0;
+		partition(arr, 0, arr.length-1);
+		if (arr.length % 2 == 1)
+		{
+			b = ((arr.length - 1) / 2 ) +1;
+		}
+		else 
+		{
+			b = (arr[a] + arr[a+1])/2;
+		}
+		return (b);
 	}
 
 	@Override
 	
 	public int challengeTwo(String[] arr, String query) 
 	{
+		
 		mergeSort(arr);
 		for (int i = 0; i < arr.length; i++) 
 		{
