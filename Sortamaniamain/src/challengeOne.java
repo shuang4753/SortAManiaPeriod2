@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class challengeOne 
 {
 
-	public static void bubbleSort(int[] list1)
+	public static void bubbleSort(int[] list1)	
 	{
 		int o = list1.length;
 		for(int i = 0; i < o - 1; i++) 		//swap counter
