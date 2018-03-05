@@ -36,8 +36,11 @@ public class Team11SortCompetition extends SortCompetition {
 
 	@Override
 	public int challengeFour(int[][] arr) {
-		
-		return 0;
+		for (int i = 0; i < arr.length; i++)
+		{
+			countSort(arr[i]);
+		}
+		return 1;
 	}
 
 	@Override
@@ -55,6 +58,52 @@ public class Team11SortCompetition extends SortCompetition {
 	//Sorting Methods
 	
 	//STILL TESTING DO NOT USE YET!!!!!!
+	public static int getMax(int [][] arr)
+	{
+		int n = arr.length;
+		int l = arr[0].length;
+		int max = (arr[0][l/2] + arr[0][l/2])/2;
+		for (int i = 1; i < n; i++)
+		{
+			if ((arr[i][l/2] + arr[i][l/2])/2 > max)
+			{
+				max = (arr[i][l/2] + arr[i][(l/2)-1])/2;
+			}
+		}
+		return max;
+	}
+	
+	/*public static void countSort(int[][] arr)
+	{
+		int n = arr.length;
+		int max = getMax(arr);
+		int [][] count = new int[n + 1][max + 1];
+		int [][] result = new int[n + 1][1];
+		int i;
+		
+		for (i = 0; i < n; i++)
+		{
+			count [arr[i][]]++;
+		}
+		
+		for (i = 1; i < max + 1; i++)
+		{
+			count[i] += count[i-1];
+			//count[i] = count[i] + count[i-1];
+		}
+		
+		for (i = n - 1; i >= 0; i--)
+		{
+			result[count[arr[i]] - 1] = arr[i];
+			count[arr[i]]--;
+		}
+		
+		for (i = 0; i < n; i++)
+		{
+			arr[i] = result[i];
+		}
+	}*/
+	
 	public static int getMax(int[] arr)
 	{
 		int n = arr.length;
