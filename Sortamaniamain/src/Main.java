@@ -7,27 +7,62 @@ public class Main {
 	
 		//Testing arrays
 				int [] test1 = {5,4,4,7,2,6,34,324,2,1,5,5357,2,54};
+				String [] test3 = {"zebra" , "tortilla" , "abba" , "foo", "bar", "aba"};
 				Random rand = new Random();
-				int[] One = new int[10000];
-				for (int i = 0; i < 10000; i++) {
-					One[i] = rand.nextInt(10000);
+				int count = 50;
+				int[] One = new int[count];
+				for (int i = 0; i < count; i++) {
+					One[i] = rand.nextInt(count);
 				}
+				int[] Two = One;
+				int[] Three = One;
+				int[] Four = One;
 				Team7 sh = new Team7();
-				
-				//Insertion Sort Test
+
+				//Selection Sort Test
 				long start = System.nanoTime();
-				sh.challengeOne(test1);
-				System.out.println(sh.challengeOne(One));
+				Team7.selectionSort(One);
 				long end = System.nanoTime();
 				long time = end -start; 
-				System.out.println("Test1 took: " + time + "nanoseconds");
+				long avgTime = time/100 ; 
+				System.out.println("Test1 took: " + avgTime + "nanoseconds");
 				System.out.println(Arrays.toString(One));
 				
+				//Insertion Sort Test
+				 start = System.nanoTime();
+				Team7.insertionSort(Three);
+				 end = System.nanoTime();
+				 time = end -start; 
+				System.out.println("Test2 took: " + time + "nanoseconds");
+				System.out.println(Arrays.toString(Three));
 				
+				
+				//Bubble Sort Test
+				start = System.nanoTime();
+				ArrayMethods1.bubbleSort(Four);
+				end = System.nanoTime();
+				time = end - start ; 
+				System.out.println("Test3 took: " + time + "nanoseconds");
+				System.out.println(Arrays.toString(Four));
+				
+
+				Team7.selectionSort2(test3);
+				
+
+				
+
+				
+
+	}
+				public static void newList()
+				{
+					Random rand1 = new Random();
+					int[] One1 = new int[10000];
+				}
 
 
 	
-	}
+	
 	
 	
 	

@@ -20,12 +20,12 @@ public class ArrayMethods1 {
 		}
 	}
 	
-	public static void selectionSort(double[] list1) {
+	public static void selectionSort(String[] list1) {
 		for (int j = 0; j < list1.length;j++) {
 			int select = j;
 			for (int i = j; i < list1.length; i++) {
-				double x = list1[select];
-				if (x > list1[i]) {
+				String x = list1[select];
+				if (x.compareTo(list1[i]) < 0) {
 					x = list1[i];
 					select = i;
 				}
