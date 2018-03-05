@@ -27,7 +27,7 @@ public abstract class One {
 	}
 	//challengeOne: Standard sort and process
 	@Override
-	public abstract int challengeOne(int[] arr) 
+	public abstract void challengeOne(int[] arr) 
 	{
 		//random number generator 
 		//data set: an array of 10,000 random integers between 0-1000
