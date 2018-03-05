@@ -1,20 +1,32 @@
+import java.util.Arrays;
+
 //Lily's class
 
 public class Challenge2and5 {
 	public static void main (String args[]) {
 		System.out.println("Personal Runner is here");
-		String [] test1 = {"apple", "cucum", "micros", "zorro"};
+		String [] test1 = {"apple", "cucum", "zorro", "zorro", "micro"};
 		
 		long start = System.nanoTime();
-		int indexReturned = stringSort("micros",test1);
+		//String[] stringArr = stringSort(test1);
+		int indexReturned = challengeTwo(test1);
 		long end = System.nanoTime();
 		long time = end - start;
 		System.out.println("Stirng Sort test test took: "+ time + "nanoseconds");
-		System.out.println(indexReturned); 
+		//System.out.println(Arrays.toString(stringArr)); 
+		System.out.println(indexReturned);
 	}
 	
-	public static int stringSort(String givenStr, String[] test1) {
-		int swapNum = 0, recordedNum=0;
+	public static int challengeTwo (String given, String[] test1) {
+		String[] newTest = stringSort(test1);
+		
+		for(String s:newTest) {
+			
+		}
+		
+	}
+	public static String[] stringSort (String[] test1) {
+		int swapNum = 0;
 		for(int i = 0; i<test1.length;i++) {
 			swapNum = i; 
 			for(int j=i-1; j>=0;j--) {
@@ -27,7 +39,7 @@ public class Challenge2and5 {
 				}
 			}
 		}
-		
+		return test1;
 	}
 	
 	public static void stringSwap(String[]arr, int index1, int index2) {
