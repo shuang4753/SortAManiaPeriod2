@@ -40,6 +40,7 @@ public class Team11SortCompetition extends SortCompetition {
 		{
 			countSort(arr[i]);
 		}
+		
 		return 1;
 	}
 
@@ -443,5 +444,62 @@ public class Team11SortCompetition extends SortCompetition {
 		 elements[index2]=temp;
 	}
 	
+	public static void swap(int[][] elements, int index1, int index2)
+	{
+		 int[] temp=elements[index1];
+		 elements[index1]= elements[index2];
+		 elements[index2]=temp;
+	}
 
+	
+	
+	
+	
+	//unfinished
+	public static int partition2d(int[][] list1, int front, int back)
+	{
+		int pivotIndex = front;
+		int pivotValue = (list1[pivotIndex][list1.length/2] + list1[pivotIndex][(list1.length/2)-1])/2;
+		int checkIndex = back;
+
+		while (pivotIndex != checkIndex)
+		{	
+			int checkValue = (list1[checkIndex][list1.length/2] + list1[checkIndex][(list1.length/2)-1])/2;
+			if (pivotIndex < checkIndex)
+			{
+				if (pivotValue < checkValue)		
+				{
+					checkIndex--;
+				}
+				
+				if (pivotValue >= checkValue)
+				{
+					swap(list1, pivotIndex, checkIndex);
+					int temp = pivotIndex;
+					pivotIndex=checkIndex;
+					checkIndex=temp;
+					checkIndex++;
+				}
+			}
+			
+			else 
+			{
+				if (pivotValue > checkValue)		
+				{
+					
+					checkIndex++;
+				}
+				
+				if (pivotValue <= checkValue)
+				{
+					swap(list1, pivotIndex, checkIndex);
+					int temp = pivotIndex;
+					pivotIndex=checkIndex;
+					checkIndex=temp;
+					checkIndex--;
+				}
+			}
+		}
+		return pivotIndex;
+	}
 }
