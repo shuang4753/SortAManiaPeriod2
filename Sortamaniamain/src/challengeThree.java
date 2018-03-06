@@ -40,7 +40,7 @@ public abstract class challengeThree
 		
 		if(list1.length % 2 == 0)
 		{
-			median = ((int) list1[list1.length / 2] - ((int) list1[list1.length] / 2) - 1);
+			median = ((int) list1[list1.length / 2] + ((int) list1[list1.length / 2 - 1])/2);
 		
 		}
 		else
