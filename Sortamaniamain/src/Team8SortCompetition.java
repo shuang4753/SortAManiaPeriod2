@@ -46,7 +46,6 @@ public class Team8SortCompetition extends SortCompetition
 		for(int x = 0; x < C; x++)
 		{
 			ran[x] = (int)(Math.random()*(U-L)) + L;
-			System.out.println(ran[x]);
 		}
 		return ran;
 	}
@@ -64,8 +63,9 @@ public class Team8SortCompetition extends SortCompetition
 	}
 
 	@Override
-	public int challengeThree(int[] arr) {
-		// TODO Auto-generated method stub
+	public int challengeThree(int[] arr) 
+	{
+		
 		return 0;
 	}
 
@@ -85,6 +85,27 @@ public class Team8SortCompetition extends SortCompetition
 	public String greeting() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public static String[] merge(String[] x, String[] y)
+	{
+		String[] combo = new String[x.length + y.length];
+		int xc = 0;
+		int yc = 0;
+		while(xc + yc < (x.length + y.length) - 1)
+		{
+			if(x[xc].compareTo(y[yc])>=0)
+			{
+				combo[xc + yc] = y[yc];
+				yc++;
+			}
+			else
+			{
+				combo[xc + yc] = x[xc];
+				xc++;
+			}
+		}
+		return combo;
 	}
 	
 }
