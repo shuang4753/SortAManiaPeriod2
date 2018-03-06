@@ -1,11 +1,11 @@
-import java.util.Math;
+import java.lang.Math;
 
 //Wes Avedisian, Saurabh Bansal, Ava DiPietro
 public class Team8SortCompetition extends SortCompetition
 {
 	public static void main (String[] args)
 	{
-		randomInts(10000);
+		randomInts(0, 100, 200);
 		
 	}
 	
@@ -42,12 +42,13 @@ public class Team8SortCompetition extends SortCompetition
 	}
 	public static int[] randomInts(int L, int U, int C)
 	{
-		int[] ran = new int[U];
+		int[] ran = new int[C];
 		for(int x = 0; x < C; x++)
 		{
-			ran[x] = Math.random()*(U-c);
+			ran[x] = (int)(Math.random()*(U-L)) + L;
+			System.out.println(ran[x]);
 		}
-		return pay;
+		return ran;
 	}
 
 	@Override
