@@ -6,10 +6,8 @@ public class Runner {
 	{
 		SortCompetition our = new Team11SortCompetition();
 
-
-
 		//CountTest
-		int [] list1 = tenThousand(10000);
+		int [] list1 = randomintArray(10000);
 		int [] copy = list1;
 		//int [] copy2 = 
 		long start = System.nanoTime();
@@ -39,43 +37,58 @@ public class Runner {
 		System.out.println(Arrays.toString(list1) + "\n");
 
 		//ChallengeFour
-		int[][] test = thousand2(10000);
+		int[][] test = randomint2dArray(1000);
+		print(test);
 		long start3 = System.nanoTime();
-		
+		our.challengeFour(test);
 		long end3 = System.nanoTime();
 		long time3 = end3 - start3;
+		System.out.println();
 		System.out.println("ChallengeFour took: " + time3 + "nanoseconds");
+		print(test);
 		//System.out.println((copy[copy.length/2] + copy[(copy.length/2)-1]) / 2);
-		System.out.println(Arrays.toString(test) + "\n");
+		//System.out.println(Arrays.toString(test) + "\n");
 
 		//if positive, then merge took longer
 		//if negative, then quick took longer
-		long compareTime = time1 - time;
-		System.out.print(compareTime);
+		//long compareTime = time1 - time;
+		//System.out.print(compareTime);
 	}
 
 
-	public static int[] tenThousand (int length)
+	public static int[] randomintArray (int length)
 	{
 		int[] list = new int[length];
-		for (int i = 0; i<list.length-1; i++)
+		for (int i = 0; i<list.length; i++)
 		{
 			list[i]=(int)(Math.random()*10000);
 		}
 		return list;
 	}
 
-	public static int[][] thousand2 (int length)
+	public static int[][] randomint2dArray (int length)
 	{
 		int[][] list = new int[length][length];
-		for (int i = 0; i<list.length; i++)
+		for (int i = 0; i<length; i++)
 		{
-			for (int j = 0; j < list.length; i++)
+			for (int j = 0; j < length; j++)
 			{
 				list[i][j]=(int)(Math.random()*10000);
 			}
 		}
 		return list;
+	}
+	
+	public static void print(int[][] arr)
+	{
+		for(int i = 0; i < arr.length; i++)
+		{
+			for(int j = 0; j < arr[i].length; j++)
+			{
+				System.out.print(arr[i][j] + ", ");
+			}
+			System.out.println();
+		}
 	}
 
 	public static void swap(int[][] elements, int index1, int index2)
