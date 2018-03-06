@@ -2,6 +2,27 @@ import java.util.Arrays;
 
 public class Challenge2 extends SortCompetition
 {
+	public static void main (String[] args)
+	{
+		int[] L1 = tenK (10000);
+		int[] copy = L1;
+		long start = System.nanoTime();
+		challengeOne(L1);
+		long end = System.nanoTime();
+		long time = end - start;
+		System.out.println("Challenge 1 took: " + time + "Nanoseconds");
+		System.out.println(challengeOne(L1));
+		System.out.println(Arrays.toString(L1) + "/n");
+	}
+	public static int [] tenK (int length)
+	{
+		int[] L = new int[length];
+		for (int i = 0; i <L.length - 1; i ++)
+		{
+			L[i] = (int) (Math.random() *10000);
+		}
+		return L;
+	}
 	//Merge String
 	public static String[] mergeSort(String[] S)
 	{
@@ -66,7 +87,7 @@ public class Challenge2 extends SortCompetition
 		partition(arr, 0, arr.length-1);
 		if (arr.length % 2 == 1)
 		{
-			b = ((arr.length - 1) / 2 ) +1;
+			b = arr[((arr.length - 1) / 2 ) +1];
 		}
 		else 
 		{
