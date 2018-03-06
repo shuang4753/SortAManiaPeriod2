@@ -1,12 +1,12 @@
 //Lingli's class
 import java.util.Arrays;
 
-public abstract class One {
+public abstract class Challenge1 {
 	public static void main(String[] args)
 	{
 		int[] randArr= randomInts(1000);
 		long start = System.nanoTime();
-		int medium= challengeOne(randArr);
+		challengeOne(randArr);
 		long end = System.nanoTime();
 		long time = end - start;
 		System.out.println("Challenge 1 took: "+ time + " nanoseconds");
@@ -31,7 +31,19 @@ public abstract class One {
 		//random number generator 
 		//data set: an array of 10,000 random integers between 0-1000
 		insertionSort(arr);
-		return (arr[arr.length/2] + arr[(arr.length/2)-1])/2;
+		//return (arr[arr.length/2] + arr[(arr.length/2)-1])/2;
+		
+		int middle = (arr.length/2);
+
+	    if (arr.length%2==1) 
+	    {
+	    	return arr[middle];
+	    } 
+	    
+	    else 
+	    {
+	    	return (arr[middle-1] + arr[middle])/2;	
+	    }
 	}
 	
 	public static void insertionSort(int[] arr)
@@ -55,19 +67,4 @@ public abstract class One {
 			}
 		}
 
-	public static int median(int[] mid) 
-	{
-	    int middle = (mid.length/2);
-	    
-	    if (mid.length % 2 == 1) 
-	    {
-	    	return mid[middle];
-	    } 
-	    
-	    else 
-	    {
-	    	return (mid[middle - 1] + mid[middle])/2;	
-	    }
-		
-	}
 }
