@@ -11,7 +11,7 @@ public class Challenge2 extends SortCompetition
 		long end = System.nanoTime();
 		long time = end - start;
 		System.out.println("Challenge 1 took: " + time + "Nanoseconds");
-		System.out.println(challengeOne(L1));
+		System.out.println(challengeOne(L1));A
 		System.out.println(Arrays.toString(L1) + "/n");
 	}
 	public static int [] tenK (int length)
