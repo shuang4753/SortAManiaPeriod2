@@ -6,16 +6,23 @@ public class Runner
 	
 	public static void main(String[] args)
 	{
-		int[] test = randomInts(10000);
-		System.out.println("Unsorted Array: " + Arrays.toString(test));
+		int[] test1 = randomInts(10000);
+		System.out.println("Unsorted Array for Challenge One: " + Arrays.toString(test1));
 		long start = System.nanoTime();
-		challengeOne.bubbleSort(test);
-		int med = test.length/2;
+		challengeOne.bubbleSort(test1);
+		int med = test1.length/2;
 		long end = System.nanoTime();
 		long time = end - start;
-		System.out.println("Sorted Array: " + Arrays.toString(test));
-		System.out.println("The median of this array is " + test[med] + ".");
+		System.out.println("Sorted Array: " + Arrays.toString(test1));
+		System.out.println("The median of this array is " + test1[med] + ".");
 		System.out.println("Challenge One took: " + time + " nanoseconds.");		
+		System.out.println();
+		
+		int[][] test4 = multiInts(10000);
+		System.out.println("Unsorted Array for Challenge Four: " + Arrays.toString(test4));
+		start = System.nanoTime();
+		//challengdsgn
+		
 	}
 	
 	public static int[] randomInts (int lim)
