@@ -1,44 +1,22 @@
 public class challengeTwo 
 {
+	//ref
+	//https://stackoverflow.com/questions/29294982/using-quicksort-on-a-string-array
 	public static void joJoSort(String[] list1, int front, int back)
 	{
-		if(back > front)
+		int i = front;
+		int j = back;
+		
+		if (j - i >= 1)
 		{
-			int pivot = partition(list1, front, back);
-					
-			//left side
-			joJoSort(list1, front, pivot - 1);
-			
-			//right side
-			joJoSort(list1, pivot + 1, back);
-		}
-	}	
-		public static int partition(String[] list1, int front, int back)
-		{
-			front = 0;
-			back = list1.length;
-			
-			int pivot =list1[0];
-			int i=0;
-			int j=list1[list1.length-1];
-			while(pivot>list1[i])
+			String pivot = list1[i];
+			while (j > i)
 			{
-				swapI(list1,pivot,i);
-				i++;
+				while ()
 			}
-			while(pivot<list1[j])
-			{
-				swapI(list1,pivot,j);
-				j--;
-			}
-			return pivot;
 		}
-		
-		
-		
-		
-		
 	}
+	
 	
 	public static void swap(String[]arr, int index1, int index2)
 	{
