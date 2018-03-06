@@ -28,8 +28,7 @@ public class Team1Runner {
 		 for(int y=0;y<5;y++)
 	        {int asciichar=character.nextInt(127);
 	         String rand1=new Character((char)asciichar).toString();
-	          if(rand1.equals(null))
-	          {chars[y].equals(null);}
+	         
 	          if((rand1!=null)&&(chars[y]!=null))
 	          {chars[y].equals(rand1);}
 	        }	

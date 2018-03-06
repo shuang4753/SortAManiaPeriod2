@@ -7,12 +7,8 @@ public class Team1SortCompetition extends SortCompetition {
 		
 	}
 	public int challengeOne(int[]baseList)
-	{ long start=System.nanoTime();
+	{ 
 	  insertionSort(baseList);
-	  long end=System.nanoTime();
-	  long time=end-start;
-	  System.out.println(time);
-	  
 	 int x=baseList.length-1;
 	 if(baseList.length%2==0)
 	 {return ((baseList[x/2+1]+baseList[(x/2)])/2);	 
@@ -36,9 +32,28 @@ public class Team1SortCompetition extends SortCompetition {
 	}
 	
 	public int challengeThree(int[]baseList)
-	{insertionSort(baseList);
-	return ((baseList[4998]+baseList[4999])/2);
+	{ 
+	  insertionSort(baseList);
+	 int x=baseList.length-1;
+	 if(baseList.length%2==0)
+	 {return ((baseList[x/2+1]+baseList[(x/2)])/2);	 
+	 }
+	 else
+	 {return (baseList[(baseList.length-1)/2]);
+		 
+	 }
+	
+	 public int challengeFour (int[][]dataSet)
+	 {for (int x=0;x<dataSet.length;x++)
+	   {insertionSort(dataSet[x]);
+	   
+		 
+	   }
+		 
+	 }
+
 	}
+	
 	
 	
 	
