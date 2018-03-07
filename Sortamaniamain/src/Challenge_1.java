@@ -25,9 +25,6 @@ public abstract class Challenge_1 extends SortCompetition {
 	int x = FindMedian(medtest);
 	int y = FindMedian(medtest1);
 
-	
-	
-
 }
 
 

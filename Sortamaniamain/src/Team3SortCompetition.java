@@ -1,19 +1,19 @@
 import java.util.Arrays;
 
 public abstract class Team3SortCompetition extends SortCompetition {
-	public Team3SortCompetition(){
-		
+	public String greeting() {
+		return("We winning this lol");
 	}
-	public static int challengeOne(int[] arr){
-		for()
+	public int challengeOne(int[] arr){
+
 	}
-	public static int challengeTwo(String[] arr, String query) { 
+	public int challengeTwo(String[] arr, String query) { 
         String[]  mergeResult=mergeSort(arr);
 		long start = System.nanoTime();
 		long end = System.nanoTime();
 		long time = end - start;
 		System.out.println("Merge Took :" + time + "nanoseconds");
-	for(int i=0;i<mergeResult.length;i++)	
+		for(int i=0;i<mergeResult.length;i++)	
 		{
 			if(query.equals(mergeResult[i]))
 			{
@@ -22,7 +22,78 @@ public abstract class Team3SortCompetition extends SortCompetition {
 		}
 		
 		return -1;
-	  }
+	}
+	
+	public int challengeThree(int[][] arr){
+
+	}
+	public int challengeFour(int[][] arr){
+		int key, j, big; 
+		for(int z = 0; z < arr.length; z++) {
+			for(int i = 0; i < arr[0].length; i++) {
+				key = arr[z][i]; 
+				j = i - 1; 
+				while((j>=0)&&(arr[z][j] > key)) {
+					SwapInt(arr[z], j+1, j);
+					
+					j = j - 1; 
+				}
+				arr[z][j+1] = key;
+			}
+		}
+		
+		// if arr length is odd
+		if(arr[0].length%2==1){
+		    // create new array
+		    big = (arr[0].length-1)/2;
+		    int[] newarr = new int[arr.length];
+		    for(int z = 0; z < newarr.length; z++) {
+		        newarr[z] = arr[z][big];
+		    }
+            // sorts newarr
+            for(int i = 1; i < newarr.length; i++) {
+		    	key = newarr[i];
+			    j = i - 1;
+			    while((j>=0)&&(newarr[j] > key)) {
+				    SwapInt(newarr, j+1, j);
+				    j = j - 1;
+			    }
+			newarr[j+1] = key;
+		    }
+		    int what = (newarr.length+1)/2;
+            if(newarr.length%2==1){ // if length of newarr is odd
+		        return(newarr[(newarr.length-1)/2]);
+		    }else{
+		        return((((newarr[what]+newarr[what-1])/2)));
+		    }
+		}else{ // if array length is even
+		    // create new array
+		    big = (arr[0].length+1)/2;
+		    int[] newarr = new int[arr.length];
+		    for(int z = 0; z < newarr.length; z++) {
+		        newarr[z] = (arr[z][big]+arr[z][big-1])/2;
+		    }
+            // sorts newarr
+		    for(int i = 1; i <newarr.length; i++) {
+		    	key = newarr[i];
+			    j = i - 1;
+			    while((j>=0)&&(newarr[j] > key)) {
+				    SwapInt(newarr, j+1, j);
+				    j = j - 1;
+			    }
+			newarr[j+1] = key;
+		    }
+            int what = (newarr.length+1)/2;
+            if(newarr.length%2==1){ // if length of newarr is odd
+		        return(newarr[(newarr.length-1)/2]);
+		    }else{
+		        return((((newarr[what]+newarr[what-1])/2)));
+		    }
+		}
+	}
+	public static int challengeFive(Comparable[] arr, Comparable query){
+
+	}
 	public static String[] mergeSort(String[] list1)
 	{
 		//base case
@@ -35,6 +106,7 @@ public abstract class Team3SortCompetition extends SortCompetition {
 		String [] right = Arrays.copyOfRange(list1, list1.length/2, list1.length);
 		return(merge(mergeSort(left),mergeSort(right)));
 	}
+	
 	public static String[] merge(String[]list1,String[]list2)
 	{
 		
@@ -71,17 +143,12 @@ public abstract class Team3SortCompetition extends SortCompetition {
 			i++;
 		}
 		return empty;
-}
-	
-	
-	public static int challengeThree(int[][] arr){
-
 	}
-	public static int challengeFour(int[][] arr){
-
-	}
-	public static int challengeFive(Comparable[] arr, Comparable query){
-
+	
+	public static void SwapInt(int[] arr, int index, int index2) {
+		int x = arr[index];
+		arr[index] = arr[index2];
+		arr[index2] = x;
 	}
 	
 }
