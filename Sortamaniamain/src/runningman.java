@@ -88,7 +88,7 @@ public class runningman
 		//Greeting
 		System.out.println(pink.greeting());
 		
-//	/*	
+	/*	
 		//Challenge 1 Time
 		System.out.print("Challenge One:");
 		System.out.println(Arrays.toString(test1));
@@ -101,8 +101,8 @@ public class runningman
 		System.out.println("Time taken: " + time + " nanoseconds");
 		checker(test1);
 		mc(test1);
-//	*/
-		
+	*/
+	
 	/*
 		//Challenge 2 Time
 		String gf = test2[0];
@@ -117,7 +117,6 @@ public class runningman
 		
 	/*	
 		//Challenge 3 Time
-		
 		System.out.print("Challenge Three: ");
 		System.out.println(Arrays.toString(test3));
 		long start = System.nanoTime();

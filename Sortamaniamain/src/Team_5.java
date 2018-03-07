@@ -70,7 +70,7 @@ public class Team_5 extends SortCompetition
 		return randomgreets[r.nextInt(randomgreets.length)];
 	}
 	
-	private String [] randomgreets = {"Hi, now die.", "*yawn*", "*waves*", "*awkward silence*", "*falling asleep* w-What? Oh hello.", "Good Luck!", "I like pink."};
+	private String [] randomgreets = {"*waves*", "*awkward silence*", "Good Luck!", "Pink","Oh Hai Mark!","*insert tacky and original greeting here*"};
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//Sorting Methods
 				//MERGE SORT
