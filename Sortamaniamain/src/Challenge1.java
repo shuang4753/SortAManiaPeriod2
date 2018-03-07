@@ -14,7 +14,7 @@ public abstract class Challenge1 {
 
 	}
 	
-	public static int[]randomInts(int len)
+	private static int[]randomInts(int len)
 	{
 		int[] list1 = new int[len];
 		
@@ -31,7 +31,6 @@ public abstract class Challenge1 {
 		//random number generator 
 		//data set: an array of 10,000 random integers between 0-1000
 		insertionSort(arr);
-		//return (arr[arr.length/2] + arr[(arr.length/2)-1])/2;
 		
 		int middle = (arr.length/2);
 
@@ -46,7 +45,7 @@ public abstract class Challenge1 {
 	    }
 	}
 	
-	public static void insertionSort(int[] arr)
+	private static void insertionSort(int[] arr)
 	{
 		int temp=0;
 		for(int outside=1; outside<arr.length; outside++)
