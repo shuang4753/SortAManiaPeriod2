@@ -3,6 +3,7 @@ import java.util.Arrays;
  * 
  * 
  * @author Alyssa Ma
+ * 1
  *
  */
 public abstract class challengeThree 
