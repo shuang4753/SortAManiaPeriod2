@@ -61,8 +61,18 @@ public class Challenge2 extends SortCompetition
 		return combo;
 	}
 	//Partition Int
+	public static void quickSort(int[] list1, int front, int back) 
+	{
+		if (front < back) 
+		{
+			int p = partition(list1, front, back);
+			quickSort(list1, front, p - 1);
+			quickSort(list1, p + 1, back);
+		}
+	}
 	public static int partition(int[] list, int front, int back) 
-	{		
+	{
+		
 		int i = front;
 		int pivot = list[front];		
 		for (int j = front + 1; j <= back; j++) {
@@ -84,7 +94,7 @@ public class Challenge2 extends SortCompetition
 	{
 		int a = arr.length/2;
 		int b = 0;
-		partition(arr, 0, arr.length-1);
+		quickSort(arr, 0, arr.length-1);
 		if (arr.length % 2 == 1)
 		{
 			b = arr[((arr.length - 1) / 2 ) +1];
