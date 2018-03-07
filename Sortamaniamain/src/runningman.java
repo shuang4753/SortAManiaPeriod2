@@ -34,7 +34,7 @@ public class runningman
 		}
 
 
-/*		//Challenge 3 Test
+		//Challenge 3 Test
 		//75% sorted array of ints
 		Random b = new Random();
 		int m = 1250;
@@ -64,7 +64,7 @@ public class runningman
 		{
 			test3[i] = i;
 		}
-*/		
+		
 		//Challenge 4 Test
 		//Multidimensional Array
 		Random d = new Random();
@@ -88,7 +88,7 @@ public class runningman
 		//Greeting
 		System.out.println(pink.greeting());
 		
-//	/*	
+	/*	
 		//Challenge 1 Time
 		System.out.print("Challenge One:");
 		System.out.println(Arrays.toString(test1));
@@ -101,7 +101,7 @@ public class runningman
 		System.out.println("Time taken: " + time + " nanoseconds");
 		checker(test1);
 		mc(test1);
-//	*/
+	*/
 	
 	/*
 		//Challenge 2 Time
