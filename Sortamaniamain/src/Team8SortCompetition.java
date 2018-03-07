@@ -129,7 +129,8 @@ public class Team8SortCompetition extends SortCompetition
 	@Override
 	public int challengeThree(int[] arr) 
 	{
-		
+		insertionSort(arr);
+		int m = 
 		return 0;
 	}
 
@@ -179,5 +180,19 @@ public class Team8SortCompetition extends SortCompetition
 		a[y] = s;
 	}
 
-	
+	public static void insertionSort(int[] x)
+	{
+		int lock = 0;
+		while(lock < x.length)
+		{
+			for(int i = lock+1; i < x.length; i++)
+			{
+				if(x[i] < x[lock])
+				{
+					swap(x, lock, i);
+				}
+			}
+			lock++;
+		}
+	}
 }
