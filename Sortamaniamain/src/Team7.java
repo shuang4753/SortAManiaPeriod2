@@ -23,7 +23,7 @@ public class Team7 extends SortCompetition {
 	
 	public int challengeOne(int[] arr) {
 		selectionSort(arr);
-		return arr[arr.length/2];
+		return (arr[arr.length/2] + arr[(arr.length/2) + 1])/2;
 	}
 	
 	public int challengeTwo(String[] arr, String query) {
@@ -39,7 +39,8 @@ public class Team7 extends SortCompetition {
 		
 	
 	public int challengeThree(int[] arr) {
-		return 0;
+		insertionSort(arr) ; 
+		return (arr[arr.length/2] + arr[(arr.length/2) + 1])/2;
 	}
 	
 	

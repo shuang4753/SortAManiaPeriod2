@@ -30,10 +30,10 @@ public class Main {
 				
 				//Insertion Sort Test
 				 start = System.nanoTime();
-				Team7.insertionSort(Three);
+				Team7.challengeThree(Three);
 				 end = System.nanoTime();
 				 time = end -start; 
-				System.out.println("Test2 took: " + time + "nanoseconds");
+				System.out.println("Insertion took: " + time + "nanoseconds");
 				System.out.println(Arrays.toString(Three));
 				
 				
