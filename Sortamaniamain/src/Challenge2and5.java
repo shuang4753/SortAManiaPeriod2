@@ -43,7 +43,7 @@ public class Challenge2and5 {
 			challengeTwo("zorro",test1);
 		}
 		
-	}
+	}   
 	
 	private static String[] stringSort (String[] test1) {
 		int swapNum = 0;
