@@ -3,7 +3,8 @@ import java.util.Arrays;
 
 public class challengeOne 
 {
-
+	
+	public double median;
 	public static void bubbleSort(int[] list1)	
 	{
 		int o = list1.length;
@@ -20,6 +21,9 @@ public class challengeOne
 
 	
 	}
+	if
+	
+	
 	
 	
 	public static void swap(int[]arr, int index1, int index2)
