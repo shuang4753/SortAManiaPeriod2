@@ -130,18 +130,18 @@ public class runningman
 		mc(test3);
 	*/
 	
-	/*
+//	/*
 		//Challenge 4 Time
-	//	System.out.println(Arrays.deepToString(test4));
+//		System.out.println(Arrays.deepToString(test4));
 		long start = System.nanoTime();
 		pink.challengeFour(test4);
 		long end = System.nanoTime();
 		long time = end - start;
-	//	System.out.println(Arrays.deepToString(test4));
+//		System.out.println(Arrays.deepToString(test4));
 		System.out.print("Challenge Four:");
 		System.out.println(pink.challengeFour(test4));
 		System.out.println("Time taken: " + time + " nanoseconds");
-	*/
+//	*/
 
 		//Challenge 5 Time
 		
