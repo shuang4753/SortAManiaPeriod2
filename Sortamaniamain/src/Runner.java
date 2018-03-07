@@ -7,6 +7,7 @@ public class Runner {
 		SortCompetition our = new Team11SortCompetition();
 
 		//CountTest
+		//ChallengeOne
 		int [] list1 = randomintArray(10000);
 		int [] copy = list1;
 		//int [] copy2 = 
@@ -16,9 +17,41 @@ public class Runner {
 		long time = end - start;
 		System.out.println("ChallengeOne took: " + time + "nanoseconds");
 		System.out.println(our.challengeOne(list1));
-		System.out.println(Arrays.toString(list1) + "\n");
-
-		//MergeTest
+		//System.out.println(Arrays.toString(list1) + "\n");
+		
+		//ChallengeTwo
+		String[] list2 = {"honye","apple","     ","ioioo","gfopp"};
+		long start2 = System.nanoTime();
+		int index = our.challengeTwo(list2,"apple");
+		long end2 = System.nanoTime();
+		long time2 = end2 - start2;
+		System.out.println("ChallengeTwo took: " + time2 + "nanoseconds");
+		System.out.println(index);
+		print(list2);
+		//System.out.println(Arrays.toString(list1) + "\n");
+		
+		//ChallengeThree
+		int[] list3 = randomintArray(10000);
+		long start3 = System.nanoTime();
+		our.challengeThree(list3);
+		long end3 = System.nanoTime();
+		long time3 = end3 - start3;
+		System.out.println("ChallengeThree took: " + time3 + "nanoseconds");
+		System.out.println(our.challengeThree(list3));
+		//System.out.println(Arrays.toString(list1) + "\n");
+		
+		//ChallengeFour
+		int[][] test = randomint2dArray(1000);
+		//print(test);
+		long start4 = System.nanoTime();
+		our.challengeFour(test);
+		long end4 = System.nanoTime();
+		long time4 = end4 - start4;
+		System.out.println();
+		System.out.println("ChallengeFour took: " + time4 + "nanoseconds");
+		//print(test);
+		
+		/*//MergeTest
 		long start1 = System.nanoTime();
 		int[] mergeFinal = Team11SortCompetition.mergeSort(copy);
 		long end1 = System.nanoTime();
@@ -34,18 +67,9 @@ public class Runner {
 		long time2 = end2 - start2;
 		System.out.println("ChallengeOne took: " + time2 + "nanoseconds");
 		System.out.println((copy[copy.length/2] + copy[(copy.length/2)-1]) / 2);
-		System.out.println(Arrays.toString(list1) + "\n");
+		System.out.println(Arrays.toString(list1) + "\n");*/
 
-		//ChallengeFour
-		int[][] test = randomint2dArray(1000);
-		print(test);
-		long start3 = System.nanoTime();
-		our.challengeFour(test);
-		long end3 = System.nanoTime();
-		long time3 = end3 - start3;
-		System.out.println();
-		System.out.println("ChallengeFour took: " + time3 + "nanoseconds");
-		print(test);
+		
 		//System.out.println((copy[copy.length/2] + copy[(copy.length/2)-1]) / 2);
 		//System.out.println(Arrays.toString(test) + "\n");
 
@@ -90,12 +114,14 @@ public class Runner {
 			System.out.println();
 		}
 	}
-
-	public static void swap(int[][] elements, int index1, int index2)
+	
+	public static void print(String[] arr)
 	{
-		int[] temp=elements[index1];
-		elements[index1]= elements[index2];
-		elements[index2]=temp;
+		for (int i = 0; i < arr.length; i++)
+		{
+			System.out.print(arr[i] + ", ");
+		}
+		System.out.println();
 	}
 
 }

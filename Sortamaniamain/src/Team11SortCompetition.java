@@ -13,9 +13,9 @@ public class Team11SortCompetition extends SortCompetition {
 	@Override
 	public int challengeTwo(String[] arr, String query) {
 
-		int something = 0;
+		int something = -1;
 		String [] result = mergeSort(arr);
-		for(int i = arr.length -1; i >= 0; i++)
+		for(int i = arr.length -1; i >= 0; i--)
 		{
 			arr[i] = result[i];
 			if (arr[i].equals(query))
@@ -41,6 +41,7 @@ public class Team11SortCompetition extends SortCompetition {
 			countSort(arr[i]);
 		}
 		quickSort(arr, 0, arr.length - 1);
+		//countSort(arr);
 		return 1;
 	}
 
@@ -59,32 +60,40 @@ public class Team11SortCompetition extends SortCompetition {
 	//Sorting Methods
 
 	//STILL TESTING DO NOT USE YET!!!!!!
-	public static int getMax(int [][] arr)
+	public static void countSort(int[][] arr)
 	{
 		int n = arr.length;
-		int l = arr[0].length;
-		int max = (arr[0][l/2] + arr[0][l/2])/2;
-		for (int i = 1; i < n; i++)
+		int[][] copy = new int[n][];
+		
+		for (int j = 0; j < n; j++)
 		{
-			if ((arr[i][l/2] + arr[i][l/2])/2 > max)
-			{
-				max = (arr[i][l/2] + arr[i][(l/2)-1])/2;
-			}
+			copy[j] = arr[j].clone();
 		}
-		return max;
-	}
-
-	public static void countSorte(int[][] arr)
-	{
-		int n = arr.length;
-		int max = getmaxMedian(arr);
-		int [] temp = new int[n];
-		int [][] result = new int[n][n];
+		
+		int[] temp = new int[n];
 		int i;
 		
 		for (i = 0; i < n; i++)
 		{
 			temp[i] = (arr[i][n/2] + arr[i][(n/2)-1])/2;
+		}
+		
+		int[] count = new int[getMax(temp) + 1];
+		
+		for (i = 0; i < n; i++)
+		{
+			count[temp[i]]++;
+		}
+		
+		for (i = 1; i < count.length; i++)
+		{
+			count[i] += count[i-1];
+		}
+		
+		for (i = n - 1; i >= 0; i--)
+		{
+			arr[count[temp[i]] - 1] = copy[i];
+			count[temp[i]]--;
 		}
 	}
 
