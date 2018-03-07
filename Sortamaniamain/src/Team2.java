@@ -81,27 +81,15 @@ public class Team2 extends SortCompetition{
 		//challenge three
 		public static int[] challengeTree(int [] list1)
 		{
-			int x = list1.length;
-		
-			for(int i = 1 ; i < x; i++)
-			{
-				int y = list1[i];
-				int z = i - 1;
-				
-				while(z >= 0 && list1[z] > y)
-				{
-					list1[z + 1] = list1[z];
-					z = z - 1;
-				}
-				list1[z + 1] = y;
-			}
-			return list1;
+
 		}
 		
 		//challenge four
 		public static int[] challengeFour() {
 			//sort rows, for each sort, take the median value so u make a 1d array of medians (should be 100)
 			//return median number in the median row//
+			
+			
 		}
 		
 		//challenge five
@@ -196,6 +184,24 @@ public class Team2 extends SortCompetition{
 
 // ____________________________Private challenge 3
 	
+	private static void insort(int [] list1)
+	{
+		int x = list1.length;
+		
+		for(int i = 1 ; i < x; i++)
+		{
+			int y = list1[i];
+			int z = i - 1;
+			
+			while(z >= 0 && list1[z] > y)
+			{
+				list1[z + 1] = list1[z];
+				z = z - 1;
+			}
+			list1[z + 1] = y;
+		}
+	}
+	
 	public static int median(int [] list1)
 	{
 		int median = list1.length/2;
@@ -209,6 +215,9 @@ public class Team2 extends SortCompetition{
 			return (list1[list1.length / 2] + ( list1[list1.length / 2 - 1])/2);
 		}
 	}
-
+	
+	//Challenge 4 timsort attempt work in prog -Alyssa
+	
+	
 }
 

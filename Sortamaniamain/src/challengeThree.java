@@ -51,6 +51,7 @@ public abstract class challengeThree
 		{
 			return (list1[list1.length / 2] + ( list1[list1.length / 2 - 1])/2);
 		}
+		System.out.println(median);
 	}
 	
 }
