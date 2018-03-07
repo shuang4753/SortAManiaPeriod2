@@ -28,23 +28,31 @@ public class Team7 extends SortCompetition {
 	
 	public int challengeTwo(String[] arr, String query) {
 		selectionSort2(arr);
-		for(int i= 0 ; i <= arr.length; i++ ) {
+		for(int i= 0 ; i < arr.length; i++ ) {
 			if (arr[i].equals(query))
-				return 1; 
+				return i; 
 		}
+		return -1;
 		
-		return 0; 
 		
 		}
 		
 	
 	public int challengeThree(int[] arr) {
-		insertionSort(arr) ; 
+		insertionSort(arr);
 		return (arr[arr.length/2] + arr[(arr.length/2) + 1])/2;
 	}
 	
 	
 	public int challengeFour(int[][] arr) {
+		for (int i = 0; i < arr.length;i++) {
+			for (int j = 0; j < arr[i].length;j++) {
+				insertionSort(arr[i]);
+			}
+			//save median
+			
+		}
+		
 		return 0;
 		
 	}
@@ -88,7 +96,7 @@ public class Team7 extends SortCompetition {
 			int select = j;
 			for (int i = j; i < list1.length; i++) {
 				String x = list1[select];
-				if (x.compareTo(list1[i]) < 0) {
+				if (x.compareTo(list1[i]) > 0) {
 					x = list1[i];
 					select = i;
 				}
