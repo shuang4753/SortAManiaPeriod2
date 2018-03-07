@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Team11SortCompetition extends SortCompetition {
 
@@ -36,25 +37,37 @@ public class Team11SortCompetition extends SortCompetition {
 
 	@Override
 	public int challengeFour(int[][] arr) {
+		int n = arr.length;
 		for (int i = 0; i < arr.length; i++)
 		{
 			countSort(arr[i]);
+			//quickSort(arr[i], 0, arr.length - 1);
 		}
 		quickSort(arr, 0, arr.length - 1);
 		//countSort(arr);
-		return 1;
+		//int med =(((arr[n/2][n/2]+arr[n/2][(n/2)-1])/2) + ((arr[(n/2)-1][n/2]+arr[(n/2)-1][(n/2)-1])/2))/2;
+		return (arr[n/2][n/2]/4) + (arr[n/2][(n/2)-1]/4) + (arr[(n/2)-1][n/2]/4) + (arr[(n/2)-1][(n/2)-1]/4);
 	}
 
 	@Override
 	public int challengeFive(Comparable[] arr, Comparable query) {
-
-		return 0;
+		Comparable[] result = mergeSort(arr);
+		int position = -1;
+		for (int i = arr.length - 1; i >= 0; i--)
+		{
+			arr[i] = result[i];
+			if (result[i].compareTo(query)==0)
+			{
+				position = i;
+			}
+		}
+		return position;
 	}
 
 	@Override
 	public String greeting() {
 
-		return "hi";
+		return "hi, we're group 11 :)";
 	}
 
 	//Sorting Methods
@@ -272,6 +285,19 @@ public class Team11SortCompetition extends SortCompetition {
 
 		return merge(mergeSort(left), mergeSort(right));
 	}
+	
+	public static Comparable[] mergeSort(Comparable[] list)
+	{
+		if (list.length==1)
+		{
+			return list;
+		}
+
+		Comparable[] left = Arrays.copyOfRange(list,0,list.length/2); 
+		Comparable[] right = Arrays.copyOfRange(list,list.length/2,list.length);
+
+		return merge(mergeSort(left), mergeSort(right));
+	}
 
 	public static void quickSort(int[] list1, int front, int back)
 	{
@@ -395,6 +421,48 @@ public class Team11SortCompetition extends SortCompetition {
 			if (index1<list1.length && index2<list2.length) 
 			{
 				if (list1[index1]<(list2[index2]))
+				{
+					list3[index3]=list1[index1];
+					index1++;
+				}
+
+				else 
+				{
+					list3[index3] = list2[index2];
+					index2++;
+				}
+			}
+
+			else
+			{
+				if (index2<list2.length)
+				{
+					list3[index3]=list2[index2];
+					index2++;
+				}
+
+				if (index1<list1.length)
+				{
+					list3[index3]=list1[index1];
+					index1++;
+				}
+			}
+		}
+		return list3;
+	}
+	
+	public static Comparable[] merge(Comparable[] list1, Comparable[] list2)
+	{
+		int bigLength=list1.length+list2.length;
+		Comparable[] list3 = new String[bigLength]; 
+		int index1 = 0;
+		int index2 = 0;
+
+		for (int index3=0; index3<(list3.length); index3++)
+		{
+			if (index1<list1.length && index2<list2.length) 
+			{
+				if (list1[index1].compareTo(list2[index2])<0)
 				{
 					list3[index3]=list1[index1];
 					index1++;
