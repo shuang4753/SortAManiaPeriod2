@@ -9,7 +9,8 @@ public class Team8SortCompetition extends SortCompetition
 		randomInts(0, 100, 200);
 		
 	}
-	public static int[] randomInts (int x) { // ava's ELITE method do not tuch
+	public static int[] randomInts (int x) // ava's ELITE method do not tuch
+	{ 
 		int[] randoms = new int[x];
 		for (int y = 0; y < x; y++) {
 			randoms[y] = (int) (Math.random() * x);
@@ -37,7 +38,7 @@ public class Team8SortCompetition extends SortCompetition
 			s1 = Arrays.copyOfRange(S, 0, (S.length/2)-1);
 			String[] s2 = new String[S.length-S.length/2];
 			s2 = Arrays.copyOfRange(S, S.length/2, S.length-1);
-			return merge(mergeSort(s1), mergeSort(s2));
+			return merge1(mergeSort(s1), mergeSort(s2));
 		}
 		else
 		{
@@ -45,7 +46,7 @@ public class Team8SortCompetition extends SortCompetition
 		}
 	}
 	
-	public static String[] merge(String[] x, String[] y)
+	public static String[] merge1(String[] x, String[] y)
 	{
 		String[] combo = new String[x.length + y.length];
 		int xc = 0;
