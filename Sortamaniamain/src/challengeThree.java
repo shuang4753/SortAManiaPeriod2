@@ -3,6 +3,7 @@ import java.util.Arrays;
  * 
  * 
  * @author Alyssa Ma
+ * 1
  *
  */
 public abstract class challengeThree 
@@ -10,7 +11,7 @@ public abstract class challengeThree
 	//mostly sorted arr, sort and return median
 	public static void main(String [] args)
 	{
-		int[]test1 = {3,4,9,8,5,10,7,5};
+		int[]test1 = {3,4,9,8,5,10,7,5,6,11};
 		
 		long start = System.nanoTime();
 		challengeTree(test1);
@@ -18,9 +19,8 @@ public abstract class challengeThree
 		long time = end - start;
 		System.out.println("Insertion sort time: " + time + " nanoseconds.");
 		System.out.println(Arrays.toString(test1));
-
 	}
-	public static void challengeTree(int [] list1)
+	public static int[] challengeTree(int [] list1)
 	{
 		int x = list1.length;
 	
@@ -36,17 +36,21 @@ public abstract class challengeThree
 			}
 			list1[z + 1] = y;
 		}
-		int median;
+		return list1;
+	}
+	
+	public static int median(int [] list1)
+	{
+		int median = list1.length/2;
 		
-		if(list1.length % 2 == 0)
+		if(list1.length % 2 == 1)
 		{
-			median = ((int) list1[list1.length / 2] + ((int) list1[list1.length / 2 - 1])/2);
-		
+			return list1[median]; 
 		}
 		else
 		{
-			median = (int) list1[list1.length / 2]; 
+			return (list1[list1.length / 2] + ( list1[list1.length / 2 - 1])/2);
 		}
-		System.out.println(median);
 	}
+	
 }
