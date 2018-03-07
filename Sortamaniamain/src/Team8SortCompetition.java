@@ -172,4 +172,12 @@ public class Team8SortCompetition extends SortCompetition
 		return combo;
 	}
 	
+	public static void swap(int[] a, int x, int y)
+	{
+		int s = a[x];
+		a[x] = a[y];
+		a[y] = s;
+	}
+
+	
 }
