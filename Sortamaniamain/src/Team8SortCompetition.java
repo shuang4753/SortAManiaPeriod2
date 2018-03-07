@@ -150,7 +150,7 @@ public class Team8SortCompetition extends SortCompetition
 	@Override
 	public String greeting() 
 	{
-	return "Beylo, we are group 8!";
+	return "Beylo, we are group 8! We are here to compete for the Sort Competition!";
 	}
 	
 	public static String[] merge(String[] x, String[] y)
