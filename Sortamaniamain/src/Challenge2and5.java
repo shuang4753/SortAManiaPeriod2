@@ -28,6 +28,23 @@ public class Challenge2and5 {
 		return -1;
 	}
 	
+	public class challengeFive implements Comparable<challengeFive> {
+
+		
+		public challengeFive(int[] value, String[] sentence, Double[] doble) {
+			this.value = value;
+			this.sentence = sentence;
+			this.doble = doble;
+		}
+		@Override
+		public int compareTo(challengeFive given) {
+			// TODO Auto-generated method stub
+			System.out.println("\nThis is challenge 5");
+			challengeTwo("zorro",test1);
+		}
+		
+	}
+	
 	private static String[] stringSort (String[] test1) {
 		int swapNum = 0;
 		for(int i = 0; i<test1.length;i++) {
