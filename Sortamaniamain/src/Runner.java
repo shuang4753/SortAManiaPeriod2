@@ -8,7 +8,7 @@ public class Runner
 		int[] test1 = randomInts(10000);
 		System.out.println(Arrays.binarySearch(test1, 1000 ));
 		//challengeOne(test1);
-		
+		String[] test2 = 
 		int[][] test4 = multiInts(10000);
 		System.out.println("Unsorted Array for Challenge Four: " + Arrays.toString(test4));
 		//challengdsgn
@@ -53,6 +53,20 @@ public class Runner
 			}
 		}
 		return randArr;
+	}
+	
+	public static String[] randStrings(int lim, int size) {
+		char[] set = {'a','b','c','d','e','f','g','h','i','j','k','l','m','o','p','q','r','s','t','u','v','w','x','y','z'};
+		String xen1 = "";
+		Random a = new Random();
+		String[] randArray = new String[lim];
+		for(int x = 0;x < lim;x++) {
+			for(int y = 0;y < size;y++) {
+				
+			}
+		}
+		String[] randArr = new String[lim];
+		
 	}
 	
 	public static void bubbleSortInt(int[] list1)	
