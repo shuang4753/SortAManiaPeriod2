@@ -13,7 +13,7 @@ public class Team5SortCompetition extends SortCompetition
 		@Override
 		public int challengeTwo(String[] arr, String query)
 		{
-			Team_5.quickSort(arr, 0, arr.length);
+			Team5SortCompetition.quickSort(arr, 0, arr.length);
 
 			for(int i = 0; i < arr.length; i++) 
 			{
