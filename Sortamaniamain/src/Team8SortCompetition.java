@@ -146,9 +146,9 @@ public class Team8SortCompetition extends SortCompetition
 	}
 
 	@Override
-	public String greeting() {
-		// TODO Auto-generated method stub
-		return null;
+	public String greeting() 
+	{
+	return "Beylo, we are group 8!";
 	}
 	
 	public static String[] merge(String[] x, String[] y)
