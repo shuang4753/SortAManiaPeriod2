@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.Random;
-public class Team1SortCompetition extends SortCompetition {
+public class Team1SortCompetition extends SortCompetition implements Comparable<SortCompetition>{
 	
 	public String greeting()
 	{return "This is Team 1,Tyson Lawrence and Amy Chen. We are ready to compete!";
@@ -36,23 +34,41 @@ public class Team1SortCompetition extends SortCompetition {
 	  insertionSort(baseList);
 	 int x=baseList.length-1;
 	 if(baseList.length%2==0)
-	 {return ((baseList[x/2+1]+baseList[(x/2)])/2);	 
-	 }
+	   {return ((baseList[x/2+1]+baseList[(x/2)])/2);	 
+	   }
 	 else
 	 {return (baseList[(baseList.length-1)/2]);
 		 
 	 }
+	}
 	
 	 public int challengeFour (int[][]dataSet)
-	 {for (int x=0;x<dataSet.length;x++)
-	   {insertionSort(dataSet[x]);
+	 {  int[]medians=new int[dataSet.length];
+		int temp=0;
+	    for (int z=0;z<dataSet.length;z++)
+	   {temp=challengeOne(dataSet[z]);
+	    medians[z]=temp;} 
+	    return challengeOne(medians);
+	    
+	    
+     }
+	 public int challengeFive(Comparable[]arr,Comparable query)
+	 {int[]comparisons=new int[arr.length];
+	   for(int x=0;x<arr.length;x++)
+	     {int z=query.compareTo(arr[x]);
+	      comparisons[x]=z; 
+	     }
+	  for (int y=0;y<comparisons.length;y++)
+	     {if (comparisons[y]==0)
+	        {return y;}	  
+	     }
+		return -1; 
+	 }
 	   
 		 
-	   }
-		 
-	 }
+	 
 
-	}
+	
 	
 	
 	
