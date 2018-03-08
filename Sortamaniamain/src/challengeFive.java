@@ -10,7 +10,7 @@ public class challengeFive implements Comparator<Object>
 			for(int j = 0; j < o - 1; j++)
 			{
 				compare(list1[j], list1[j+1]); //how would i use compare?
-				if(1)
+				if(1)//if ob1 > ob2, 
 				{
 					swap(list1, j, j + 1);
 				}
@@ -22,7 +22,7 @@ public class challengeFive implements Comparator<Object>
 	
 	
 	@Override
-	public static int compare(Object arg0, Object arg1) 
+	public int compare(Object arg0, Object arg1) 
 	{
 		// TODO Auto-generated method stub
 		return 0;
