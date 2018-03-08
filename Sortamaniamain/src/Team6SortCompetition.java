@@ -8,7 +8,9 @@ public class Team6SortCompetition extends SortCompetition
 	@Override
 	public int challengeOne(int[] x) 
 	{
+		
 		int median;
+		long start = System.nanoTime();
 		bubbleSortInt(x);
 		if(x.length % 2 == 0) 
 		{
@@ -24,19 +26,25 @@ public class Team6SortCompetition extends SortCompetition
 			//For this purpose we could use the size of 5, where the middle number is the 3rd place thus we can get 3 with x.length+1/2
 		}
 		return median;
+		long end = System.nanoTime();
+		long time = end - start;
 	}
 
 	@Override
 	public int challengeTwo(String[] arr, String query) 
 	{
+		long start = System.nanoTime();
   		bubbleSortString(arr);
   		return Arrays.asList(arr).indexOf(query);
+  		long end = System.nanoTime();
+  		long time = end - start;
 	}
 
 	@Override
 	public int challengeThree(int[] x) 
 	{
 		int median;
+		long start = System.nanoTime();
 		insertionSort(x);
 		if(x.length % 2 == 0)
 		{
@@ -47,17 +55,23 @@ public class Team6SortCompetition extends SortCompetition
 			median = (int)x[x.length+1/2];	
 		}
 		return median;
+		long end = System.nanoTime();
+		long time = end - start;
 	}
 
 	@Override
 	public int challengeFour(int[][] arr) 
 	{
-		return 0;
+		long start = System.nanoTime();
+		bubble2D(arr);
+		long end = System.nanoTime();
+		long time = end - start;
 	}
 
 	@Override
 	public int challengeFive(Comparable[] arr, Comparable query) 
 	{
+		long start = System.nanoTime();
 		for(int x = 0; x < arr.length; x++) {
 			if(query.compareTo(x) == 0) {
 				return x;
@@ -65,13 +79,15 @@ public class Team6SortCompetition extends SortCompetition
 			}
 		}
 		return -1;
+		long end = System.nanoTime();
+		long time = end - start;
 	}
 
 
 	@Override
 	public String greeting() 
 	{
-		return "beep boop";
+		return "beep boop it's not done.";
 	}
 	
 	//helper methods
@@ -80,6 +96,13 @@ public class Team6SortCompetition extends SortCompetition
 		int temp = arr[index1];
 		arr[index1] = arr[index2];
 		arr[index2] = temp;
+	}
+	
+	public static void swap(int[][]arr, int index1, int index2, int index3, int index4)
+	{
+		int temp = arr[index1][index2];
+		arr[index1][index2] = arr[index3][index4];
+		arr[index3][index4] = temp;
 	}
 	
 	public static void swap(String[]arr, int index1, int index2)
@@ -144,6 +167,27 @@ public class Team6SortCompetition extends SortCompetition
 				if(list1[j] > (list1[j + 1]))
 				{
 					swap(list1, j, j + 1);
+				}
+			}
+		}
+	}
+	
+	public static void bubble2D(int[][] list1)	
+	{
+		int o = list1.length;
+		for(int i = 0; i < o - 1; i++)
+		{
+			for(int j = 0; j < o - 1; j++)
+			{
+				for(int x = i+1; x < o -1; x++)
+				{
+					for (int y = j+1; y < o - 1; y++)
+					{
+						if(list1[i][j] > (list1[x][y]))
+						{
+							swap(list1, i,j, x,y);
+						}
+					}
 				}
 			}
 		}
