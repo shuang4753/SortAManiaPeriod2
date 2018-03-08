@@ -47,7 +47,8 @@ public class Team2 extends SortCompetition{
 		}
 		
 		//challenge one
-		public static int challengeOne(int[] arr) 
+		@Override
+		public int challengeOne(int[] arr) 
 		{
 			//random number generator 
 			//data set: an array of 10,000 random integers between 0-1000
@@ -67,7 +68,7 @@ public class Team2 extends SortCompetition{
 		}	
 		
 		//challenge two
-		public static int challengeTwo (String given, String[] test1) {
+		public int challengeTwo (String given, String[] test1) {
 			stringSort(test1);
 			
 			for(int i = 0; i < test1.length; i++) {
@@ -79,7 +80,7 @@ public class Team2 extends SortCompetition{
 		}
 		
 		//challenge three
-		public static int challengeTree(int [] list1)
+		public int challengeTree(int [] list1)
 		{
 			insort(list1);
 			
@@ -96,15 +97,21 @@ public class Team2 extends SortCompetition{
 		}
 		
 		//challenge four
-		public static int[] challengeFour() {
-			//sort rows, for each sort, take the median value so u make a 1d array of medians (should be 100)
-			//return median number in the median row//
-			
-			inso(list1);
+
+		public int challengeFour(int[][] arr)
+		{
+			for (int x=0; x<arr.length;x++) 
+			{
+				for (int y=0; y< arr[x].length;y++) 
+				{
+					insort(arr[x]);
+				}
+			}
+			return 0;
 		}
 		
 		//challenge five
-		public static int challengeFive (Comparable given, Comparable[] mysArr) {
+		public int challengeFive (Comparable given, Comparable[] mysArr) {
 			cstringSort(mysArr);
 			for(int i = 0; i < mysArr.length; i++) {
 				if(mysArr[i].equals(given)) {
@@ -128,7 +135,7 @@ public class Team2 extends SortCompetition{
 		return list1;
 	}
 	
-	private static void insertionSort(int[] arr)
+	public static void insertionSort(int[] arr)
 	{
 		int temp=0;
 		for(int outside=1; outside<arr.length; outside++)

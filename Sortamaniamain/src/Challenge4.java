@@ -1,4 +1,3 @@
-//Lingli's class
 import java.util.Arrays;
 
 public class Challenge4 {
@@ -13,22 +12,11 @@ public class Challenge4 {
 		System.out.println("Challenge 4 took: "+ time + " nanoseconds");
 
 	}
-
-	private static int[]randomInts(int len)
+	
+	public static int challengeFour(int[][] arr)
 	{
-		int[] list1 = new int[len];
-		
-		for (int i = 0; i<list1.length-1; i++)
-		{
-			list1[i]=(int)(Math.random()*10000);
-		}
-	
-		return list1;
-	}
-	
-	
-	public static int challengeFour(double[][])
-	{
-		
+		for (int x=0; x<arr.length;x++) {
+			for (int y=0; y< arr[x].length;y++) {
+				insertionSort(arr[i]);
 	}
 }
