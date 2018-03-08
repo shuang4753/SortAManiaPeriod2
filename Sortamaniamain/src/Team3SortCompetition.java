@@ -78,7 +78,8 @@ public abstract class Team3SortCompetition extends SortCompetition {
 	}
 	
 	public int challengeThree(int[][] arr){
-
+		insertionSort(arr);
+		return (arr[arr.length - 1 / 2);
 	}
 	public int challengeFour(int[][] arr){
 		int key, j, big; 
@@ -196,6 +197,33 @@ public abstract class Team3SortCompetition extends SortCompetition {
 			i++;
 		}
 		return empty;
+	}
+	
+	public static void insertionSort(int[] list1)
+	{
+		int count = 0; 
+		
+		while (count != 0)
+		{
+			count = 0; 
+			
+			for (int i = 0; i < list1.length - 1; i++)
+			{	
+				if (list1[i] > list1[i + 1])
+				{
+					count++;
+					xinsertionSort(list1, i, i + 1);
+				}
+			}
+		}
+	}
+	
+	public static void xinsertionSort(int[]arr, int index1, int index2)
+	{
+		int temp;
+		temp = arr[index1];
+		arr[index1] = arr[index2];
+		arr[index2] = temp;
 	}
 	
 	public static void SwapInt(int[] arr, int index, int index2) {
