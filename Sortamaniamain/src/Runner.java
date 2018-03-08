@@ -137,6 +137,17 @@ public class Runner
 		
 		
 	}
+	
+	public static int challengeFive(Comparable[] arr, Comparable query) {
+		Arrays.sort(arr);
+		for(int x = 0; x < arr.length; x++) {
+			if(query.compareTo(x) == 0) {
+				return x;
+
+			}
+		}
+		return -1;
+	}
 }
                       
   
