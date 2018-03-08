@@ -66,6 +66,7 @@ public class Team6SortCompetition extends SortCompetition
 		bubble2D(arr);
 		long end = System.nanoTime();
 		long time = end - start;
+		//need recursion to find median. we still aint finished oml
 	}
 
 	@Override
