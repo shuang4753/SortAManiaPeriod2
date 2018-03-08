@@ -87,7 +87,7 @@ public class Team6SortCompetition extends SortCompetition
 	@Override
 	public String greeting() 
 	{
-		return "beep boop it's not done.";
+		return "beep boop barely done.";
 	}
 	
 	//helper methods
