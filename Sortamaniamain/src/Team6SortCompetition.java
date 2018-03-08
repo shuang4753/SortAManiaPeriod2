@@ -29,10 +29,7 @@ public class Team6SortCompetition extends SortCompetition
 	@Override
 	public int challengeTwo(String[] arr, String query) 
 	{
-		long start = System.nanoTime();
   		bubbleSortString(arr);
-  		long end = System.nanoTime();
-  		long time = end - start;
   		return Arrays.asList(arr).indexOf(query);
 	}
 
