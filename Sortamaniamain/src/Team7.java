@@ -58,7 +58,13 @@ public class Team7 extends SortCompetition {
 	}
 	
 	public int challengeFive(Comparable[] arr, Comparable query) {
-		return 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i].equals(query)) 
+			return i ;
+		}
+			
+		
+		return -1;
 	}
 	
 	public static void Swap(int[] arr, int index1, int index2) {
@@ -75,7 +81,7 @@ public class Team7 extends SortCompetition {
 	
 	//Add a custom greeting so your sorter can introduce itself
 	public String greeting() {
-		return "pene";
+		return "Hello?";
 	}
 	public static void selectionSort(int[] list1) {
 		for (int j = 0; j < list1.length;j++) {
