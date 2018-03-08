@@ -155,6 +155,7 @@ public class Team8SortCompetition extends SortCompetition
 			meds[x] = arr[x][(arr[x].length/2)];
 		}
 		quickSort(meds, 0, meds.length-1);
+		
 		return(meds[meds.length/2-1]);
 		
 	}
