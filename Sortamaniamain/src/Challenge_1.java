@@ -16,15 +16,41 @@ public abstract class Challenge_1 extends SortCompetition {
 		}
 		else return (numba[median]);
 	}
-	int[]test1 = {6729, 5894, 4335, 8867, 383, 519, 2244, 
-				  4615, 3251, 1398, 7511, 5453, 1234, 4297, 
-				  2459, 4990, 3069, 5926, 7864, 196, 8136, 4364};
-	int[]medtest = {1, 2, 3, 4, 5};
-	int[]medtest1 = {1, 2, 3, 4, 5, 6};
 	
-	int x = FindMedian(medtest);
-	int y = FindMedian(medtest1);
-
+	int partition(int arr[], int start, int end)
+    {
+        int partivot = arr[end]; 
+        int x = (start-1);
+        for (int y=start; y<end; y++)
+        {
+            if (arr[y] <= partivot)
+            {
+                x++;
+                int temp = arr[x];
+                arr[x] = arr[y];
+                arr[y] = temp;
+            }
+        }
+ 
+  
+        int temp = arr[x+1];
+        arr[x+1] = arr[end];
+        arr[end] = temp;
+ 
+        return x+1;
+    }
+ 
+    void sort(int arr[], int start, int end)
+    {
+        if (start < end)
+        {
+            int parti = partition(arr, start, end);
+ 
+ 
+            sort(arr, start, parti-1);
+            sort(arr, parti+1, end);
+        }
+    }
 }
 
 
