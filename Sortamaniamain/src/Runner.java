@@ -7,12 +7,13 @@ public class Runner
 	
 	public static void main(String[] args) {
 		int[] test1 = randomInts(10000);
-		System.out.println(Arrays.asList(test1).indexOf(1000));
+		System.out.println(Arrays.toString(test1));
 		//challengeOne(test1);
-		String[] test2 = randStrings(10000,5);
-		System.out.println(test2.toString());
+		String[] test2 = {"dick","canal","butt","poop","fat"};
+		System.out.println(challengeTwo(test2,"dick"));
+		
 		int[][] test4 = multiInts(10000);
-		System.out.println("Unsorted Array for Challenge Four: " + Arrays.toString(test4));
+		//System.out.println("Unsorted Array for Challenge Four: " + Arrays.toString(test4));
 		//challengdsgn
 		
 	}
@@ -26,7 +27,7 @@ public class Runner
 	
 	public static void swap(String[]arr, int index1, int index2)
 	{
-		String temp = arr[index1];
+	 	String temp = arr[index1];
 		arr[index1] = arr[index2];
 		arr[index2] = temp;
 	}
@@ -57,22 +58,26 @@ public class Runner
 		return randArr;
 	}
 	
-	public static String[] randStrings(int lim, int size) {
+	public static String[] randStrings(int lim) {
 		String set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 		StringBuilder testString = new StringBuilder();
+		ArrayList <String> randArray = new ArrayList <String> (lim);
 		Random a = new Random();
-		ArrayList <String> randArr = new ArrayList <String> (lim);
-		for(int x = 0; x < size; x++) {
-		 while(testString.length() < size) {
-			int index = a.nextInt(set.length());
-			testString.append(set.charAt(index));
-		}
+		String[] randArr = new String[lim];
+		int levin =  testString.length();
+		for(int x = 0; x < lim; x++) {
+		 while(levin < 5) {
+			 int index = a.nextInt(set.length());
+			 testString.append(set.charAt(index));
+			 }
 		 String result = testString.toString();
-		 randArr.add(result);
+		 randArray.add(result);
+		 levin = 0;
 		}
-		return (String[]) randArr.toArray();
+		return randArray.toArray(randArr);
 	}
-	
+		
+
 	public static void bubbleSortInt(int[] list1)	
 	{
 		int o = list1.length;
@@ -124,12 +129,10 @@ public class Runner
 }
 	
 	public static int challengeTwo(String[] x, String y) {
-		System.out.println("Unsorted Array for Challenge One: " + Arrays.toString(x));
 		long start = System.nanoTime();
 		bubbleSortString(x);
 		long end = System.nanoTime();
 		long time = end - start;
-		System.out.println("Sorted Array: " + Arrays.toString(x));
 		return Arrays.asList(x).indexOf(y);
 		
 		
