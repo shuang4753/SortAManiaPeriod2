@@ -91,6 +91,16 @@ public class Team8SortCompetition extends SortCompetition
 			quickSort(list1, p + 1, back);
 		}
 	}
+	
+	public static void quickSort(int[] list1, int front, int back) 
+	{
+		if (front < back) 
+		{
+			int p = partition(list1, front, back);
+			quickSort(list1, front, p - 1);
+			quickSort(list1, p + 1, back);
+		}
+	}
 	public static int partition(int[] list, int front, int back) 
 	{
 		
@@ -147,13 +157,22 @@ public class Team8SortCompetition extends SortCompetition
 		insertionSort(arr);
 		int m = 
 		return 0;
-		asdj
 	}
 
 	@Override
 	public int challengeFour(int[][] arr) {
-		// TODO Auto-generated method stub
-		return 0;
+		for(int[] x : arr)
+		{
+			quickSort(x, 0, x.length-1);
+		}
+		int[] meds = new int[arr.length];
+		for(int x = 0; x < arr.length; x++)
+		{
+			meds[x] = arr[x][(arr[x].length/2)];
+		}
+		quickSort(meds, 0, meds.length-1);
+		return(meds[meds.length/2-1]);
+		
 	}
 
 	@Override
