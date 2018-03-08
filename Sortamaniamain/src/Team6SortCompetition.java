@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Arrays;
 
 public class Team6SortCompetition extends SortCompetition
 {
@@ -28,13 +29,11 @@ public class Team6SortCompetition extends SortCompetition
 	@Override
 	public int challengeTwo(String[] arr, String query) 
 	{
-		bubbleSortString(arr);
-		int found;
-		for (int i = 0; i<arr.length; i++)
-		{
-			
-		}
-		return -1;
+		long start = System.nanoTime();
+  		bubbleSortString(arr);
+  		long end = System.nanoTime();
+  		long time = end - start;
+  		return Arrays.asList(arr).indexOf(query);
 	}
 
 	@Override
