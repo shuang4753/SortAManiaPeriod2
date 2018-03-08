@@ -9,6 +9,12 @@ import java.util.Arrays;
 
 public class Team2 extends SortCompetition{
 
+	public String greeting()
+	{
+		return "Hello this is Team 2!! Fighting!";
+		
+	}
+	
 		public static void main(String [] args)
 		{
 
@@ -23,7 +29,7 @@ public class Team2 extends SortCompetition{
 			long time = end - start;
 			System.out.println("Challenge 1 took: "+ time + " nanoseconds");
 			System.out.println(Arrays.toString(randArr));
-				
+
 				//Challenge 2 10000 Rand String Test
 			start = System.nanoTime();
 			int indexReturned = challengeTwo("mincro",test1);
@@ -48,12 +54,12 @@ public class Team2 extends SortCompetition{
 		
 		//challenge one
 		@Override
-		public int challengeOne(int[] arr) 
+		public static int challengeOne(int[] arr) 
 		{
 			//random number generator 
 			//data set: an array of 10,000 random integers between 0-1000
 			insertionSort(arr);
-			
+
 			int middle = (arr.length/2);
 
 		    if (arr.length%2==1) 
@@ -64,8 +70,8 @@ public class Team2 extends SortCompetition{
 		    else 
 		    {
 		    	return (arr[middle-1] + arr[middle])/2;	
-		    }
-		}	
+		    }		
+		}
 		
 		//challenge two
 		public int challengeTwo (String given, String[] test1) {
@@ -123,18 +129,18 @@ public class Team2 extends SortCompetition{
 		
 // _______________________________________________________________________Private challenge 1
 		
-	private static int[]randomInts(int len)
+	public static int[]randomInts(int len)
 	{
 		int[] list1 = new int[len];
 		
 		for (int i = 0; i<list1.length-1; i++)
 		{
 			list1[i]=(int)(Math.random()*10000);
+	
 		}
-	
-		return list1;
-	}
-	
+		
+			return list1;
+		}
 	public static void insertionSort(int[] arr)
 	{
 		int temp=0;
@@ -153,8 +159,9 @@ public class Team2 extends SortCompetition{
 						break;
 					}
 				}
+			}
 		}
-	}
+	
 	// Challenge 2 and 5 helper method
 	private static void cstringSort (Comparable[] test1) {
 		int swapNum = 0;
