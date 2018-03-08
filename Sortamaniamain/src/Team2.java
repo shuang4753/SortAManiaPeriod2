@@ -79,9 +79,20 @@ public class Team2 extends SortCompetition{
 		}
 		
 		//challenge three
-		public static int[] challengeTree(int [] list1)
+		public static int challengeTree(int [] list1)
 		{
-
+			insort(list1);
+			
+			int median = list1.length/2;
+			if(list1.length % 2 != 0)
+			{
+				median = (int) list1[median];
+			}
+			else
+			{
+				median = (int) list1[median] + (list1[median - 1]/2);
+			}
+			return median;
 		}
 		
 		//challenge four
