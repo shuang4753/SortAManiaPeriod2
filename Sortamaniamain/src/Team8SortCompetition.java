@@ -168,7 +168,7 @@ public class Team8SortCompetition extends SortCompetition
 	{
 		insertionSort(arr);
 		int m = arr[arr.length/2-1];
-		return 0;
+		return m;
 	}
 
 	@Override
