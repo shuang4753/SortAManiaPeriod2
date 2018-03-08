@@ -5,8 +5,6 @@ public class Team11SortCompetition extends SortCompetition {
 
 	@Override
 	public int challengeOne(int[] arr) {
-		//quickSort(arr, 0, arr.length-1);
-		//radixSort(arr);
 		countSort(arr);
 		return ( arr[arr.length/2] + arr[(arr.length/2)-1]) / 2;
 	}
@@ -41,12 +39,11 @@ public class Team11SortCompetition extends SortCompetition {
 		for (int i = 0; i < arr.length; i++)
 		{
 			countSort(arr[i]);
-			//quickSort(arr[i], 0, arr.length - 1);
+			
 		}
 		quickSort(arr, 0, arr.length - 1);
-		//countSort(arr);
-		//int med =(((arr[n/2][n/2]+arr[n/2][(n/2)-1])/2) + ((arr[(n/2)-1][n/2]+arr[(n/2)-1][(n/2)-1])/2))/2;
-		return (arr[n/2][n/2]/4) + (arr[n/2][(n/2)-1]/4) + (arr[(n/2)-1][n/2]/4) + (arr[(n/2)-1][(n/2)-1]/4);
+		//Find the median array
+		return ((arr[n/2][n/2]  +  arr[(n/2)][(n/2)-1]  +  arr[(n/2)-1][n/2]  +  arr[(n/2)-1][(n/2)-1]) / 4);
 	}
 
 	@Override
@@ -67,12 +64,10 @@ public class Team11SortCompetition extends SortCompetition {
 	@Override
 	public String greeting() {
 
-		return "hi, we're group 11 :)";
+		return "Hi! This is our fantasmical SortoMania Class Thing! Simon and Steven also known as TEAM 11!";
 	}
 
 	//Sorting Methods
-
-	//STILL TESTING DO NOT USE YET!!!!!!
 	public static void countSort(int[][] arr)
 	{
 		int n = arr.length;
@@ -166,45 +161,6 @@ public class Team11SortCompetition extends SortCompetition {
 		for (i = 0; i < n; i++)
 		{
 			arr[i] = result[i];
-		}
-	}
-
-	public static void count(int[] arr, int place)
-	{
-		int n = arr.length;
-		int [] count = new int[10];
-		int [] result = new int[n];
-		int i;
-
-		for (i = 0; i < n; i++)
-		{
-			count [(arr[i]/place)%10]++;
-		}
-
-		for (i = 1; i < 10; i++)
-		{
-			count[i] += count[i-1];
-		}
-
-		for (i = n - 1; i >= 0; i--)
-		{
-			result[count[(arr[i]/place)%10] - 1] = arr[i];
-			count[(arr[i]/place)%10]--;
-		}
-
-		for (i = 0; i < n; i++)
-		{
-			arr[i] = result[i];
-		}
-	}
-
-	public static void radixSort(int [] arr)
-	{
-		int max = getMax(arr);
-
-		for (int i = 1; i <= max; i*=10)
-		{
-			count(arr, i);
 		}
 	}
 

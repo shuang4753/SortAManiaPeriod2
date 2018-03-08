@@ -22,7 +22,7 @@ public class Runner {
 		//ChallengeTwo
 		String[] list2 = {"honye","apple","     ","ioioo","gfopp"};
 		long start2 = System.nanoTime();
-		int index = our.challengeTwo(list2,"apple");
+		int index = our.challengeTwo(list2,"ioioo");
 		long end2 = System.nanoTime();
 		long time2 = end2 - start2;
 		System.out.println("ChallengeTwo took: " + time2 + "nanoseconds");
@@ -49,34 +49,9 @@ public class Runner {
 		long time4 = end4 - start4;
 		System.out.println();
 		System.out.println("ChallengeFour took: " + time4 + "nanoseconds");
+		System.out.println(our.challengeFour(test));
 		//print(test);
 		
-		/*//MergeTest
-		long start1 = System.nanoTime();
-		int[] mergeFinal = Team11SortCompetition.mergeSort(copy);
-		long end1 = System.nanoTime();
-		long time1 = end1 - start1;
-		System.out.println("ChallengeOne took: " + time1 + "nanoseconds");
-		System.out.println((copy[copy.length/2] + copy[(copy.length/2)-1]) / 2);
-		System.out.println(Arrays.toString(mergeFinal) + "\n");
-
-		//quick
-		long start2 = System.nanoTime();
-		Team11SortCompetition.quickSort(copy, 0, copy.length - 1);
-		long end2 = System.nanoTime();
-		long time2 = end2 - start2;
-		System.out.println("ChallengeOne took: " + time2 + "nanoseconds");
-		System.out.println((copy[copy.length/2] + copy[(copy.length/2)-1]) / 2);
-		System.out.println(Arrays.toString(list1) + "\n");*/
-
-		
-		//System.out.println((copy[copy.length/2] + copy[(copy.length/2)-1]) / 2);
-		//System.out.println(Arrays.toString(test) + "\n");
-
-		//if positive, then merge took longer
-		//if negative, then quick took longer
-		//long compareTime = time1 - time;
-		//System.out.print(compareTime);
 	}
 
 
