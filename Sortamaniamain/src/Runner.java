@@ -6,15 +6,15 @@ public class Runner
 {
 	
 	public static void main(String[] args) {
-		int[] test1 = randomInts(10000);
-		System.out.println(Arrays.toString(test1));
+		//int[] test1 = randomInts(10000);
+		//System.out.println(Arrays.toString(test1));
 		//challengeOne(test1);
-		String[] test2 = {"dick","canal","butt","poop","fat"};
-		System.out.println(challengeTwo(test2,"dick"));
+		//String[] test2 = {"dick","canal","butt","poop","fat"};
+		//System.out.println(challengeTwo(test2,"dick"));
 		
-		int[][] test4 = multiInts(10000);
-		//System.out.println("Unsorted Array for Challenge Four: " + Arrays.toString(test4));
-		//challengdsgn
+		int[][] test4 = multiInts(10);
+		System.out.println("Unsorted Array for Challenge Four: \n" + Arrays.deepToString(test4));
+
 		
 	}
 	
