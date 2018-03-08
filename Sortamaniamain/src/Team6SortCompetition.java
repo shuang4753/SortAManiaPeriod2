@@ -28,8 +28,13 @@ public class Team6SortCompetition extends SortCompetition
 	@Override
 	public int challengeTwo(String[] arr, String query) 
 	{
-		
-		return 0;
+		bubbleSortString(arr);
+		int found;
+		for (int i = 0; i<arr.length; i++)
+		{
+			
+		}
+		return -1;
 	}
 
 	@Override
