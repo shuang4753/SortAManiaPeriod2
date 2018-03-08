@@ -139,7 +139,7 @@ public class Team8SortCompetition extends SortCompetition
 	public int challengeThree(int[] arr) 
 	{
 		insertionSort(arr);
-		int m = 
+		int m = arr[arr.length/2-1];
 		return 0;
 	}
 
