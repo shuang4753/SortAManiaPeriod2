@@ -85,6 +85,15 @@ public class Team8SortCompetition extends SortCompetition
 			quickSort(list1, p + 1, back);
 		}
 	}
+	public static void quickSort(Comparable[] list1, int front, int back) 
+	{
+		if (front < back) 
+		{
+			int p = partition(list1, front, back);
+			quickSort(list1, front, p - 1);
+			quickSort(list1, p + 1, back);
+		}
+	}
 	public static int partition(int[] list, int front, int back) 
 	{
 		
@@ -94,6 +103,25 @@ public class Team8SortCompetition extends SortCompetition
 			if (list[j] < pivot) {
 				i++;
 				int m = list[i];
+				list[i] = list[j];
+				list[j] = m;
+			}
+		}
+		for (int a = front; a < i; a++) {
+			list[a] = list[a + 1];
+		}
+		list[i] = pivot;
+		return i;
+	}
+	public static int partition(Comparable[] list, int front, int back) 
+	{
+		
+		int i = front;
+		Comparable pivot = list[front];		
+		for (int j = front + 1; j <= back; j++) {
+			if (list[j].compareTo(pivot)<0) {
+				i++;
+				Comparable m = list[i];
 				list[i] = list[j];
 				list[j] = m;
 			}
@@ -162,8 +190,14 @@ public class Team8SortCompetition extends SortCompetition
 
 	@Override
 	public int challengeFive(Comparable[] arr, Comparable query) {
-		// TODO Auto-generated method stub
-		return 0;
+		for(int x = 0; x < arr.length; x++)
+		{
+			if(query.compareTo(arr[x])==0)
+			{
+				return x;
+			}
+		}
+		return -1;
 	}
 
 	@Override
