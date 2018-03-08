@@ -27,22 +27,6 @@ public class Team8SortCompetition extends SortCompetition
 		}
 		return ran;
 	}
-	public static String[] randomString(String x)
-	{
-		String[] t2 = new String[10000];
-		for (int i =0; i <t2.length; i ++)
-		{
-			String r2 = new String();
-			final String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-			final int N1 = alphabet.length();
-			Random r = new Random();
-			for (int j = 0; j < 5; j++)
-			{
-				r2 = r2 + alphabet.charAt(r.nextInt(N1));
-			}
-			t2[i] = r2;
-		}
-	}
 	
 	// Helper methods (Quick Sort and Merge)
 	public static String[] mergeSort(String[] S)
