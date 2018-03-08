@@ -6,17 +6,17 @@ public class Runner
 {
 	
 	public static void main(String[] args) {
-		//int[] test1 = randomInts(10000);
-		//System.out.println(Arrays.toString(test1));
-		//challengeOne(test1);
-		//String[] test2 = {"dick","canal","butt","poop","fat"};
-		//System.out.println(challengeTwo(test2,"dick"));
-		
-		int[][] test4 = multiInts(10);
-		System.out.println("Unsorted Array for Challenge Four: \n" + Arrays.deepToString(test4));
+        //int[] test1 = randomInts(10000);
+        //System.out.println(Arrays.toString(test1));
+        //challengeOne(test1);
+        //String[] test2 = {"dick","canal","butt","poop","fat"};
+        //System.out.println(challengeTwo(test2,"dick"));
 
-		
-	}
+        int[][] test4 = multiInts(10);
+        System.out.println("Unsorted Array for Challenge Four: \n" + Arrays.deepToString(test4));
+
+
+    }
 	
 	public static void swap(int[]arr, int index1, int index2)
 	{
@@ -138,7 +138,7 @@ public class Runner
 		
 	}
 	
-	public static int challengeFive(Comparable[] arr, Comparable query) {
+	public static int challengeFive(Comparable<Object>[] arr, Comparable<Object> query) {
 		Arrays.sort(arr);
 		for(int x = 0; x < arr.length; x++) {
 			if(query.compareTo(x) == 0) {

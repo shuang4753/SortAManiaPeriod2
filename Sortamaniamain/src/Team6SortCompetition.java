@@ -51,15 +51,21 @@ public class Team6SortCompetition extends SortCompetition
 	@Override
 	public int challengeFour(int[][] arr) 
 	{
-		
+		return 0;
 	}
 
 	@Override
 	public int challengeFive(Comparable[] arr, Comparable query) 
 	{
-		
-		return 0;
+		for(int x = 0; x < arr.length; x++) {
+			if(query.compareTo(x) == 0) {
+				return x;
+
+			}
+		}
+		return -1;
 	}
+
 
 	@Override
 	public String greeting() 
