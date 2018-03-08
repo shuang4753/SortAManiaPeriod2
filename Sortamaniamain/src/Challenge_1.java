@@ -1,20 +1,20 @@
 //Mamadou Temp
 public abstract class Challenge_1 extends SortCompetition {
-	public static int Challenge_1(int[]numba)
+	public static int Challenge_1(int[]arr)
 	{
-		return FindMedian(numba);	
-		System.out.println(x);
+		return FindMedian(arr);	
+		
 	}
 	
 	
-	public static int FindMedian(int[]numba)
+	public static int FindMedian(int[]arr)
 	{
-		int median = numba[numba.length/2];
-		if(numba.length%2 == 1)
+		int median = arr[arr.length/2];
+		if(arr.length%2 == 1)
 		{
-			return ((numba[median]+numba[median+1])/2);
+			return ((arr[median]+arr[median+1])/2);
 		}
-		else return (numba[median]);
+		else return (arr[median]);
 	}
 	
 	int partition(int arr[], int start, int end)
