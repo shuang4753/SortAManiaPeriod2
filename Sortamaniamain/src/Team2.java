@@ -100,7 +100,7 @@ public class Team2 extends SortCompetition{
 			//sort rows, for each sort, take the median value so u make a 1d array of medians (should be 100)
 			//return median number in the median row//
 			
-			
+			inso(list1);
 		}
 		
 		//challenge five
@@ -227,7 +227,27 @@ public class Team2 extends SortCompetition{
 		}
 	}
 	
-	//Challenge 4 timsort attempt work in prog -Alyssa
+	//Challenge 4 insertion attempt -Alyssa
+	
+	public static void inso(int [][] x, int a, int b)
+	{
+		int c;
+		int d;
+		
+		for(int i = 1; i < a; i++)
+		{
+			c = x[i][b];
+			int[] xRow = x[i];
+			d = i - 1;
+			
+			while((d >= 0) && (x[d][b] > c))
+			{
+				x[d + 1] = x[d];
+				d = d - 1;
+			}
+			x[d + 1] = xRow;
+		}
+	}
 	
 	
 }
